@@ -19,6 +19,15 @@ public class ChatRoom {
         System.out.println("\t\t"+mess.getText());
     }
 
+    public static void deleteMessage(List<Message> messagesList, Message mess){
+        for (int i = 0; i < messagesList.size(); i++) {
+            if(mess.equals(messagesList.get(i))){
+                messagesList.remove(i);
+                break;
+            }
+        }
+    }
+
     public static void main(String[] args) {
 
         List<Message> messagesList;
@@ -32,6 +41,6 @@ public class ChatRoom {
         afficheMessage(mess);
         messagesList.add(mess);
 
-        XMLCHATROOM.writeXMLMessages(messagesList);
+        //XMLCHATROOM.writeXMLMessages(messagesList);
     }
 }
