@@ -9,7 +9,8 @@ public class GUI {
     private JPanel logo = new JPanel();
 
     public GUI() {
-        ImageIcon img = new ImageIcon("./image/Logo.PNG");
+        Toolkit t = Toolkit.getDefaultToolkit();
+        ImageIcon img = new ImageIcon(t.getImage("./images/bg.png"));
         JFrame frame = new JFrame("Chat Room");
         JPanel panel = new JPanel();
         GridBagConstraints gc = new GridBagConstraints();
@@ -21,7 +22,7 @@ public class GUI {
         frame.pack();
 
         panel.setLayout(new GridBagLayout());
-        panel.setBackground(new Color(66,47,108, 255));
+        //panel.setBackground(new Color(66,47,108, 255));
 
         gc.fill = GridBagConstraints.BOTH;
         gc.insets = new Insets(5,2,2,2);
@@ -31,8 +32,7 @@ public class GUI {
 
         gc.gridx = 0;
         gc.gridy = 0;
-        panel.add(new JLabel(new ImageIcon("./image/Logo.PNG")),gc);
-
+        panel.add(new JLabel(new ImageIcon(t.getImage("./images/bg.png"))),gc);
 
         frame.add(panel, BorderLayout.CENTER);
         frame.setVisible(true);
