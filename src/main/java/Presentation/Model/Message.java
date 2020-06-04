@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Message {
 
+    // id message ??
     private String SenderName;
     private String Text;
     private String date;
