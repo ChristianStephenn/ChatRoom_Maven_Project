@@ -1,4 +1,5 @@
 import Presentation.Constants;
+import Presentation.Controller.Server;
 import Presentation.Model.Message;
 import Presentation.Model.User;
 import Presentation.Xml;
@@ -30,7 +31,7 @@ public class ChatRoom {
 
     public static void main(String[] args) {
 
-        List<Message> messagesList;
+        /*List<Message> messagesList;
 
         Xml XMLCHATROOM = new Xml();
         messagesList = XMLCHATROOM.readXMLMessages();
@@ -39,8 +40,8 @@ public class ChatRoom {
         User lol = new User("marc");
         Message mess = new Message(lol.getName(),"Hello World 3 !", Constants.dateFormat.format(new Date()));
         afficheMessage(mess);
-        messagesList.add(mess);
-
+        messagesList.add(mess);*/
+        Server.connect("localhost");
         //XMLCHATROOM.writeXMLMessages(messagesList);
     }
 }

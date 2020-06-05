@@ -1,5 +1,4 @@
 
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -70,10 +69,19 @@ public class LoginGUI extends JFrame {
         frame.setVisible(true);
     }
 
-
     public static void main(String[] args) {
 
-        new LoginGUI();
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                    LoginGUI window = new LoginGUI();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
     }
 
 
