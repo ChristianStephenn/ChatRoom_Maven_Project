@@ -7,14 +7,15 @@ import java.io.*;
 import java.net.*;
 import java.util.Scanner;
 
-public class SimpleClient {
+public class SimpleUser {
     private ObjectOutputStream output;
     private ObjectInputStream input;
     private Socket socket;
     private Scanner scan;
+    private String name;
 
-    public void connect(String ip)
-    {
+    public void connect(String name, String ip) {
+        this.name = name;
         int port = 6666;
         String str;
         try  {
@@ -25,7 +26,7 @@ public class SimpleClient {
             output = new ObjectOutputStream(socket.getOutputStream());
             input = new ObjectInputStream(socket.getInputStream());
 
-            String textToSend = new String("send me the student info!");
+            String textToSend = new String(name + " is connected!");
             System.out.println("text sent to the server: " + textToSend);
             output.writeObject(textToSend);		//serialize and write the String to the stream
 
@@ -34,7 +35,7 @@ public class SimpleClient {
             //System.out.println("Received student id: " + user.getID() + " and student name:" + user.getName() + " from server");
             scan = new Scanner(System.in);
             while(true){
-                str = scan.nextLine();
+                str = name + ": " + scan.nextLine();
                 socket = new Socket(ip, port);
                 output = new ObjectOutputStream(socket.getOutputStream());
                 output.writeObject(str);
@@ -51,4 +52,5 @@ public class SimpleClient {
             }
         }
     }
+
 }

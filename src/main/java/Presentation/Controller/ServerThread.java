@@ -1,7 +1,5 @@
 package Presentation.Controller;
 
-import Presentation.Model.User;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -23,12 +21,11 @@ public class ServerThread extends Thread{
             input = new ObjectInputStream(socket.getInputStream());
             output = new ObjectOutputStream(socket.getOutputStream());
 
-            String text = (String)input.readObject();  //read the object received through the stream and deserialize it
-            System.out.println("server received a text:" + text);
+            String text = (String) input.readObject();  //read the object received through the stream and deserialize it
+            System.out.println(text);
 
             //User user = new User(3000,"jack");
             //output.writeObject(user);		//serialize and write the Student object to the stream
-
 
         } catch (IOException | ClassNotFoundException ex) {
             System.out.println("Server exception: " + ex.getMessage());

@@ -1,11 +1,16 @@
 package Presentation.Controller;
 
+import Presentation.Model.User;
+
 import java.io.*;
 import java.net.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Server{
     private String ip = "localhost";
     private static ServerSocket ss;
+    private static List<User> users = new ArrayList<User>();
 
     public static void connect(String ip) {
         try {
@@ -14,7 +19,6 @@ public class Server{
             System.out.println("Server waiting for connection...");
             while (true) {
                 Socket socket = ss.accept();//establishes connection
-                System.out.println("Connected as " + ip);
                 // create a new thread to handle client socket
                 new ServerThread(socket).start();
 
