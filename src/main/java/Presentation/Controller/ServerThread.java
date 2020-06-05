@@ -1,5 +1,7 @@
 package Presentation.Controller;
 
+import Presentation.Model.User;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -23,6 +25,7 @@ public class ServerThread extends Thread{
 
             String text = (String) input.readObject();  //read the object received through the stream and deserialize it
             System.out.println(text);
+            //Server.addUser(user);
 
             //User user = new User(3000,"jack");
             //output.writeObject(user);		//serialize and write the Student object to the stream

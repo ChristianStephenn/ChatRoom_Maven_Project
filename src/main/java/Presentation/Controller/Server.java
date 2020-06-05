@@ -21,7 +21,8 @@ public class Server{
                 Socket socket = ss.accept();//establishes connection
                 // create a new thread to handle client socket
                 new ServerThread(socket).start();
-
+                if(users.size()>0)
+                    System.out.println(users.get(0).getName());
             }
         } catch (IOException ioe) {
             ioe.printStackTrace();
@@ -34,5 +35,9 @@ public class Server{
                 }
             }
         }
+    }
+
+    public static void addUser(User user ){
+        users.add(user);
     }
 }
