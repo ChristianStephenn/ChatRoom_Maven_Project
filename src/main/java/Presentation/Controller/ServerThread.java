@@ -1,17 +1,21 @@
 package Presentation.Controller;
 
+import Presentation.Model.Message;
 import Presentation.Model.User;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.List;
 
 public class ServerThread extends Thread{
 
     private Socket socket;
     private ObjectInputStream input;
     private ObjectOutputStream output;
+    private List<User> users;
+    private Message message;
 
     public ServerThread(Socket socket) {
         this.socket = socket;
@@ -23,9 +27,10 @@ public class ServerThread extends Thread{
             input = new ObjectInputStream(socket.getInputStream());
             output = new ObjectOutputStream(socket.getOutputStream());
 
-            String text = (String) input.readObject();  //read the object received through the stream and deserialize it
-            System.out.println(text);
-            //Server.addUser(user);
+            message = (Message) input.readObject();     //deserialize and read the Student object from the stream
+            System.out.println(message.getText());
+            users = Server.getUsers();
+            addNewUser();
 
             //User user = new User(3000,"jack");
             //output.writeObject(user);		//serialize and write the Student object to the stream
@@ -43,4 +48,26 @@ public class ServerThread extends Thread{
             }
         }
     }
+
+    public void addNewUser(){
+        if(users.size() == 0){
+            User user = new User(message.getSenderName());
+            Server.addUser(user);
+        }else{
+            if(!userExist(message.getSenderName())){
+                User user = new User(message.getSenderName());
+                Server.addUser(user);
+            }
+        }
+    }
+
+    public boolean userExist(String name){
+        for (int i = 0; i < users.size(); i++) {
+            if(users.get(i).getName().equals(name)){
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
