@@ -33,7 +33,7 @@ public class GUI {
         gc.gridx = 0;
         gc.gridy = 0;
         panel.add(new JLabel(new ImageIcon(t.getImage("./images/bg.png"))),gc);
-
+        
         frame.add(panel, BorderLayout.CENTER);
         frame.setVisible(true);
     }
