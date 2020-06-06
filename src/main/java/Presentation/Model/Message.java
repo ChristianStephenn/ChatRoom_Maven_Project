@@ -1,10 +1,9 @@
 package Presentation.Model;
 
-import java.util.Date;
+import java.io.Serializable;
 
-public class Message {
+public class Message implements Serializable {
 
-    // id message ??
     private String SenderName;
     private String Text;
     private String date;

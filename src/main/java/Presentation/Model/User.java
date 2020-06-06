@@ -3,14 +3,11 @@ package Presentation.Model;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    private int id ;
     private String name;
 
-    public User(int id, String name) {
-        this.id = id;
+    public User(String name) {
         this.name = name;
     }
-
 
     public String getName() {
         return name;
@@ -20,7 +17,4 @@ public class User implements Serializable {
         this.name = name;
     }
 
-    public int getID(){
-        return id;
-    }
 }
