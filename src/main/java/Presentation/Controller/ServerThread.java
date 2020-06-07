@@ -30,8 +30,8 @@ public class ServerThread extends Thread{
             message = (Message) input.readObject();     //deserialize and read the Student object from the stream
             System.out.println(message.getText());
             users = Server.getUsers();
+            Server.broadcast(message);
             addNewUser();
-
             //User user = new User(3000,"jack");
             //output.writeObject(user);		//serialize and write the Student object to the stream
 
@@ -51,19 +51,19 @@ public class ServerThread extends Thread{
 
     public void addNewUser(){
         if(users.size() == 0){
-            User user = new User(message.getSenderName());
+            User user = new User(message.getSenderName(),"localhost", message.getPort());
             Server.addUser(user);
         }else{
             if(!userExist(message.getSenderName())){
-                User user = new User(message.getSenderName());
+                User user = new User(message.getSenderName(),"localhost", message.getPort());
                 Server.addUser(user);
             }
         }
     }
 
     public boolean userExist(String name){
-        for (int i = 0; i < users.size(); i++) {
-            if(users.get(i).getName().equals(name)){
+        for (User user : users) {
+            if (user.getName().equals(name)) {
                 return true;
             }
         }
