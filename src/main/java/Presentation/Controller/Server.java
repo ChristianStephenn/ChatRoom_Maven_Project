@@ -1,13 +1,19 @@
 package Presentation.Controller;
 
+import Presentation.Model.Message;
 import Presentation.Model.User;
 
-import java.io.*;
-import java.net.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Server{
+    private static ObjectInputStream input;
+    private static ObjectOutputStream output;
     private String ip = "localhost";
     private static ServerSocket ss;
     private static List<User> users = new ArrayList<User>();
@@ -17,12 +23,11 @@ public class Server{
             //the server socket is defined only by a port (its IP is localhost)
             ss = new ServerSocket (6666);
             System.out.println("Server waiting for connection...");
+
             while (true) {
                 Socket socket = ss.accept();//establishes connection
                 // create a new thread to handle client socket
                 new ServerThread(socket).start();
-                /*if(users.size()>0)
-                    System.out.println(users.get(0).getName() + " " + users.size());*/
             }
         } catch (IOException ioe) {
             ioe.printStackTrace();
@@ -35,6 +40,18 @@ public class Server{
                 }
             }
         }
+    }
+
+    public static void broadcast(Message message) throws IOException {
+        for (User user : users) {
+            send(message, user.getIp(), user.getPort());
+        }
+    }
+
+    public static void send(Message message, String ip, int port) throws IOException {
+        Socket socket = new Socket(ip, port);
+        output = new ObjectOutputStream(socket.getOutputStream());
+        output.writeObject(message);
     }
 
     public static List<User> getUsers(){

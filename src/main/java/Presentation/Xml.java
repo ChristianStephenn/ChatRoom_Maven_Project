@@ -65,7 +65,7 @@ public class Xml {
                         String name = currentElement.getElementsByTagName("name").item(0).getTextContent();
                         String text = currentElement.getElementsByTagName("text").item(0).getTextContent();
                         String date = currentElement.getElementsByTagName("date").item(0).getTextContent();
-                        Message mess = new Message(name,text,date);
+                        Message mess = new Message(name,6666,text,date);
                         messagesList.add(mess);
 
                     } catch (Exception ex) {
