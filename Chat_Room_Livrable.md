@@ -194,17 +194,21 @@ La liste des exigences s’est établie en plusieurs étapes. Tout d’abord, no
 <img src = https://user-images.githubusercontent.com/63917571/83626627-ffe30680-a595-11ea-9262-2105f342e796.png width="500" high="800">
 </p>
 
+## Conception
+### Architecture système
+#### Style architectural : MVC
+Cette architecture a été choisie par l'équipe parce qu'elle permet de distinguer la couche interface graphique des autres couches (modéle et contrôleur) et d'avoir une conception simple et claire de ces dernières. Le MVC va nous permettre de gagner du temps au niveau de l'évolution du projet et nous donner une grande souplesse pour développer l'application bureau, puisque cette architecure nous donne la possibilité d'utiliser les couches par plusieurs développeurs en même temps et de faire des modifications ciblées.
 
+#### Diagramme UML des classes
 
+#### Diagramme UML de package
 
+#### Diagramme UML de déploiement
 
+#### Diagramme UML des composants
 
-
-
-
-
-
-
+#### Design Pattern : Singleton
+Ce patron permet d'assurer que chaque classe n'ait qu'une instance et donc d'avoir un meilleur contrôle lorque l'on souhaite accéder à une classe.
 
 
 
