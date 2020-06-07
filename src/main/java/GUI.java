@@ -32,7 +32,7 @@ public class GUI implements ActionListener{
 
     private JLabel jLabel = new JLabel("oui");
     private JLabel jLabel1 = new JLabel("non");
-    private JLabel jLabel2 = new JLabel("tg");
+    private JLabel jLabel2 = new JLabel("tbo");
 
 
     public GUI() {
