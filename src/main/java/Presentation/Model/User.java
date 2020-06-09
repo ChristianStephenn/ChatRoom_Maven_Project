@@ -11,6 +11,7 @@ import java.io.Serializable;
   * <li>Ip</li>
   * <li>Port</li>
   *</ul>
+  * </p>
   */
 public class User implements Serializable {
     
