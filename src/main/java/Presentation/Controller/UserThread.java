@@ -19,10 +19,8 @@ public class UserThread extends Thread{
     private int port;
     private Message message;
 
-    public UserThread(Socket socket, String name, int port) {
+    public UserThread(Socket socket) {
         this.socket = socket;
-        this.name = name;
-        this.port = port;
     }
 
     public void run() {
@@ -32,14 +30,14 @@ public class UserThread extends Thread{
             //create the streams that will handle the objects coming through the sockets
             input = new ObjectInputStream(socket.getInputStream());
             output = new ObjectOutputStream(socket.getOutputStream());
-            tmpString = name + ": " + scan.nextLine();
-            output = new ObjectOutputStream(socket.getOutputStream());
-            send(tmpString);
+
+            message = (Message) input.readObject();
+            System.out.println(message.getText());
 
             //User user = new User(3000,"jack");
             //output.writeObject(user);		//serialize and write the Student object to the stream
 
-        } catch (IOException ex) {
+        } catch (IOException | ClassNotFoundException ex) {
             System.out.println("Server exception: " + ex.getMessage());
             ex.printStackTrace();
 

@@ -2,10 +2,13 @@ package Presentation.Controller;
 
 import Presentation.Model.Message;
 import Presentation.Model.User;
+import Presentation.Singletons;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.lang.reflect.Type;
 import java.net.Socket;
 import java.util.List;
 
@@ -27,8 +30,15 @@ public class ServerThread extends Thread{
             input = new ObjectInputStream(socket.getInputStream());
             output = new ObjectOutputStream(socket.getOutputStream());
 
-            message = (Message) input.readObject();     //deserialize and read the Student object from the stream
+            String mess = (String) input.readObject();     //deserialize and read the Student object from the stream
+            String[] splitmess = mess.split("/-reg@#@#-/");
+
+            Type MessType = new TypeToken<Message>() {
+            }.getType();
+
+            message = Singletons.getGson().fromJson(splitmess[0].toString(),MessType);
             System.out.println(message.getText());
+
             users = Server.getUsers();
             Server.broadcast(message);
             addNewUser();

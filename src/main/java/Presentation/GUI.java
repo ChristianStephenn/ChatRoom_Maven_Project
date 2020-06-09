@@ -1,10 +1,17 @@
-  
+package Presentation;
+
+import Presentation.Controller.SimpleUser;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class GUI implements ActionListener{
 
@@ -35,8 +42,18 @@ public class GUI implements ActionListener{
     private JLabel jLabel1 = new JLabel("non");
     private JLabel jLabel2 = new JLabel("tbo");
 
+    private SimpleUser simpleUser;
 
     public GUI() {
+        initGUI();
+        simpleUser = new SimpleUser();
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter name: ");
+        String name = scan.nextLine();
+        simpleUser.connect(name, "localhost");
+    }
+
+    public void initGUI(){
         ImageIcon img_button = new ImageIcon("./image/coussinet_button.PNG");
         JFrame frame = new JFrame("Chat Room");
         JPanel panel = new JPanel();
@@ -93,22 +110,49 @@ public class GUI implements ActionListener{
         messageBar_panel.setBackground(new Color(84, 61, 135, 255));
         messageBar_panel.setBounds(3,588,715,43);
         messageBar_panel.setBorder(BorderFactory.createRaisedBevelBorder());
+
         write_text_field.setBounds(12,9,640,25);
         write_text_field.setBackground(new Color(253, 157, 179, 255));
         write_text_field.setBorder(textBar_border);
         write_text_field.setPreferredSize(new Dimension(600,20));
         write_text_field.setFont(font);
+
         enterButton.setBackground(null);
         enterButton.setBorder(BorderFactory.createRaisedBevelBorder());
         enterButton.setIcon(img_button);
         enterButton.setBounds(670,7,30,30);
+
+        enterButton.addActionListener(e -> {
+            try {
+                SimpleUser.send(SimpleUser.getName() + " : " + write_text_field.getText());
+                write_text_field.setText("");
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
+
+        write_text_field.addActionListener(e -> {
+            try {
+                SimpleUser.send(SimpleUser.getName() + " : " + write_text_field.getText());
+                write_text_field.setText("");
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
+
+        write_text_field.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                write_text_field.setText("");
+            }
+        });
 
         /*JScrollPane scrollPane = new JScrollPane(jPanel);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);*/
         //preShowText_panel.add(scrollPane);
 
-        enterButton.addActionListener(this);
+        //enterButton.addActionListener(this::actionPerformed);
 
         frame.add(panel, BorderLayout.CENTER);
         frame.setVisible(true);
