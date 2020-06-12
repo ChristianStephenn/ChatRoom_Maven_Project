@@ -34,7 +34,7 @@ public class GUI implements ActionListener{
     private ImageIcon img = new ImageIcon("./image/Logo.PNG");
     private JLabel image_label = new JLabel(img);
 
-    private Font font = new Font("Comic sans MS", Font.BOLD | Font.ITALIC, 10);
+    private Font font = new Font("Comic sans MS", Font.BOLD | Font.ITALIC, 15);
 
     private JPanel users = new JPanel();
 
@@ -43,6 +43,8 @@ public class GUI implements ActionListener{
     private JLabel jLabel2 = new JLabel("tbo");
 
     private SimpleUser simpleUser;
+
+    private String messagesHTML = "<html>";
 
     public GUI() {
         initGUI();
@@ -57,7 +59,6 @@ public class GUI implements ActionListener{
         ImageIcon img_button = new ImageIcon("./image/coussinet_button.PNG");
         JFrame frame = new JFrame("Chat Room");
         JPanel panel = new JPanel();
-
 
         frame.setMinimumSize(new Dimension(1040, 680));
         frame.setLocationRelativeTo(null);
@@ -92,13 +93,13 @@ public class GUI implements ActionListener{
 
         discussion_panel.add(preShowText_panel);
         preShowText_panel.add(showText_label);
-        preShowText_panel.setLayout(null);
-        preShowText_panel.setBackground(new Color(58, 234, 20, 255));
+        preShowText_panel.setLayout(new BoxLayout(preShowText_panel, BoxLayout.Y_AXIS));
+        preShowText_panel.setBackground(new Color(226, 224, 101, 255));
         preShowText_panel.setBounds(10,25,700,560);
 
         //showText_label.setBounds(10,15,100,90);
         showText_label.setFont(font);
-        showText_label.setForeground(new Color(7, 175, 226, 255));
+        showText_label.setForeground(new Color(0, 0, 0, 255));
         showText_label.setMinimumSize(new Dimension(300,20));
 
         /* tout ce qui concerne la barre d'écriture */
@@ -125,7 +126,7 @@ public class GUI implements ActionListener{
         enterButton.addActionListener(e -> {
             try {
                 SimpleUser.send(SimpleUser.getName() + " : " + write_text_field.getText());
-                write_text_field.setText("");
+                printMessages();
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -134,7 +135,7 @@ public class GUI implements ActionListener{
         write_text_field.addActionListener(e -> {
             try {
                 SimpleUser.send(SimpleUser.getName() + " : " + write_text_field.getText());
-                write_text_field.setText("");
+                printMessages();
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -156,6 +157,12 @@ public class GUI implements ActionListener{
 
         frame.add(panel, BorderLayout.CENTER);
         frame.setVisible(true);
+    }
+
+    private void printMessages() {
+        messagesHTML += write_text_field.getText() + "<br>";
+        showText_label.setText(messagesHTML + "</html>");
+        write_text_field.setText("");
     }
 
     public void actionPerformed(ActionEvent arg0) {
