@@ -71,4 +71,8 @@ public class User implements Serializable {
     public int getPort() {
         return port;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

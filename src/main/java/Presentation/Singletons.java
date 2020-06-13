@@ -12,7 +12,6 @@ public class Singletons {
             gsonInstance = new GsonBuilder()
                     .create();
         }
-
         return gsonInstance;
     }
 }

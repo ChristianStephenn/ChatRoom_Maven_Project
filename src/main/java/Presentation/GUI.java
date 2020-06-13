@@ -64,6 +64,7 @@ public class GUI implements ActionListener{
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setIconImage(img.getImage());
+        frame.setResizable(false);
         frame.pack();
 
         panel.setLayout(null);
