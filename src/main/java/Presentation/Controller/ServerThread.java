@@ -80,4 +80,7 @@ public class ServerThread extends Thread{
         return false;
     }
 
+    public List<User> getUsers() {
+        return users;
+    }
 }

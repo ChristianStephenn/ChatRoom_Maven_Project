@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ChatRoom Maven Project" />
+        <module name="ChatRoom_Maven_Project" />
         <module name="flexchatroom" />
+        <module name="ChatRoom Maven Project" />
       </profile>
     </annotationProcessing>
   </component>
