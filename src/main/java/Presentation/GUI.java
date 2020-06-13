@@ -24,7 +24,7 @@ public class GUI implements ActionListener{
     private Border loweredBevelBorder = BorderFactory.createLoweredBevelBorder();
 
     private JTextField write_text_field = new JTextField("Taper un message");
-    private JLabel showText_label = new JLabel();
+    private static JLabel showText_label = new JLabel();
     private JPanel preShowText_panel = new JPanel();
     private JPanel messageBar_panel = new JPanel();
     private  JButton enterButton = new JButton();
@@ -44,7 +44,7 @@ public class GUI implements ActionListener{
 
     private SimpleUser simpleUser;
 
-    private String messagesHTML = "<html>";
+    private static String messagesHTML = "<html>";
 
     public GUI() {
         initGUI();
@@ -69,7 +69,6 @@ public class GUI implements ActionListener{
 
         panel.setLayout(null);
         panel.setBackground(new Color(66,47,108, 255));
-
 
         /* création de la première case de discussion et ajout de son contenu*/
 
@@ -127,7 +126,8 @@ public class GUI implements ActionListener{
         enterButton.addActionListener(e -> {
             try {
                 SimpleUser.send(SimpleUser.getName() + " : " + write_text_field.getText());
-                printMessages();
+                write_text_field.setText("");
+                //printMessages();
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -136,7 +136,8 @@ public class GUI implements ActionListener{
         write_text_field.addActionListener(e -> {
             try {
                 SimpleUser.send(SimpleUser.getName() + " : " + write_text_field.getText());
-                printMessages();
+                write_text_field.setText("");
+                //printMessages();
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -162,8 +163,13 @@ public class GUI implements ActionListener{
 
     private void printMessages() {
         messagesHTML += write_text_field.getText() + "<br>";
-        showText_label.setText(messagesHTML + "</html>");
+        //showText_label.setText(messagesHTML + "</html>");
         write_text_field.setText("");
+    }
+
+    public static void printGui(String message){
+        messagesHTML += message + "<br>";
+        showText_label.setText(messagesHTML + "</html>");
     }
 
     public void actionPerformed(ActionEvent arg0) {

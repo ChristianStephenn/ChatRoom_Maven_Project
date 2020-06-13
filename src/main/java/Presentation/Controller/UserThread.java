@@ -1,6 +1,7 @@
 package Presentation.Controller;
 
 import Presentation.Constants;
+import Presentation.GUI;
 import Presentation.Model.Message;
 
 import java.io.IOException;
@@ -33,6 +34,7 @@ public class UserThread extends Thread{
 
             message = (Message) input.readObject();
             System.out.println(message.getText());
+            GUI.printGui(message.getText());
 
             //User user = new User(3000,"jack");
             //output.writeObject(user);		//serialize and write the Student object to the stream
