@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 
 public class LoginGUI extends JFrame {
     private JPanel loginPanel=new JPanel();
@@ -52,6 +53,9 @@ public class LoginGUI extends JFrame {
         button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                frame.dispose();
+                new FormGUI();
             }
         });
         panel.add(button2);
