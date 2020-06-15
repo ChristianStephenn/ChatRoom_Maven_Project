@@ -6,10 +6,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -50,6 +47,8 @@ public class GUI implements ActionListener{
         frame.setMinimumSize(new Dimension(1040, 680));
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //frame.setDefaultCloseOperation();
+
         frame.setIconImage(img.getImage());
         frame.setResizable(false);
         frame.pack();
