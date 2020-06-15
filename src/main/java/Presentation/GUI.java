@@ -3,7 +3,6 @@ package Presentation;
 import Presentation.Controller.SimpleUser;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.*;
@@ -24,7 +23,7 @@ public class GUI implements ActionListener{
     private ImageIcon img_button = new ImageIcon(Constants.BUTTON_DIRECTORY);
     private JTextField write_text_field = new JTextField(Constants.WRITE);
 
-    private JLabel showText_label = new JLabel();
+    private static JLabel showText_label = new JLabel();
     private JPanel preShowText_panel = new JPanel();
 
     private SimpleUser simpleUser;
@@ -145,5 +144,10 @@ public class GUI implements ActionListener{
 
     public static void main(String[] args) {
         new GUI();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 }
