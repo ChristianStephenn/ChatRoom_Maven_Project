@@ -57,6 +57,8 @@ public class GUI implements ActionListener{
         panel.add(image_label);
         panel.add(users);
         panel.add(discussion_panel);
+        
+        image_label.setBounds(45,10, 200,250);
 
         users.setBorder(BorderFactory.createTitledBorder(Constants.loweredBevelBorder,Constants.USERS, TitledBorder.CENTER, TitledBorder.TOP, Constants.userTitleFont, Constants.userTitleColor));
         users.setLayout(new FlowLayout(FlowLayout.LEFT));
