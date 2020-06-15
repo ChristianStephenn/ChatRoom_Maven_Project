@@ -18,12 +18,12 @@ public class Constants {
     public static String CHAT = "Chat";
     public static String WRITE = "Taper un message";
 
-    public static Color mainColor = new Color(16, 15, 45, 255);
-    public static Color barExtColor = new Color(24, 17, 61, 255);
+    public static Color mainColor = new Color(189, 158, 232, 255);
+    public static Color barExtColor = new Color(185, 138, 243, 255);
     public static Color barIntColor = new Color(253, 157, 179, 255);
-    public static Color colorText = new Color(136, 82, 238, 255);
-    public static Color userTitleColor = new Color(238, 141, 25, 255);
-    public static Color chatTitleColor = new Color(11, 226, 113, 255);
+    public static Color colorText = new Color(62, 49, 83, 255);
+    public static Color userTitleColor = new Color(54, 26, 130, 255);
+    public static Color chatTitleColor = new Color(96, 37, 234, 255);
 
     public static Border lineborder = BorderFactory.createLoweredBevelBorder();
     public static Border RaisedBevelBorder = BorderFactory.createLineBorder(barIntColor);
@@ -33,7 +33,7 @@ public class Constants {
     public static Border loweredBevelBorder = BorderFactory.createLoweredBevelBorder();
 
     public static Font font = new Font("Comic sans MS", Font.BOLD | Font.ITALIC, 10);
-    public static Font font2 = new Font("Comic sans MS",Font.PLAIN, 12);
+    public static Font font2 = new Font("Comic sans MS",Font.BOLD, 12);
     public static Font userTitleFont =  new Font("comic sans ms",Font.BOLD|Font.ITALIC,18);
     public static Font chatTitleFont =  new Font("comic sans ms",Font.BOLD|Font.ITALIC,15);
 
