@@ -31,11 +31,19 @@ public class GUI implements ActionListener{
     private static String messagesHTML = "<html>";
 
     public GUI() {
+        String name = JOptionPane.showInputDialog("Enter name");
+
         initGUI();
         simpleUser = new SimpleUser();
-        Scanner scan = new Scanner(System.in);
+        /*Scanner scan = new Scanner(System.in);
         System.out.print("Enter name: ");
-        String name = scan.nextLine();
+        String name = scan.nextLine();*/
+        simpleUser.connect(name, "localhost");
+    }
+
+    public GUI(String name) { // login GUI
+        initGUI();
+        simpleUser = new SimpleUser();
         simpleUser.connect(name, "localhost");
     }
 
@@ -60,7 +68,6 @@ public class GUI implements ActionListener{
 
         frame.setIconImage(img.getImage());
         frame.setResizable(false);
-        frame.pack();
 
         panel.setLayout(null);
         panel.setBackground(Constants.mainColor);
@@ -140,7 +147,10 @@ public class GUI implements ActionListener{
         //preShowText_panel.add(scrollPane);
 
         frame.add(panel, BorderLayout.CENTER);
+        frame.pack();
         frame.setVisible(true);
+        frame.validate();
+        frame.repaint();
     }
 
     private void printMessages() {

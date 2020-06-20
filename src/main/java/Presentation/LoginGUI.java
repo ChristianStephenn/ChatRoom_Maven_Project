@@ -42,7 +42,7 @@ public class LoginGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if(!userfield.getText().trim().equals("")) {
                     frame.dispose();
-                    //new GUI(userfield.getText());
+                    new GUI(userfield.getText());
                 }
             }
         });
@@ -53,8 +53,7 @@ public class LoginGUI extends JFrame {
         button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                frame.dispose();
+                //frame.dispose();
                 new FormGUI();
             }
         });
@@ -75,7 +74,6 @@ public class LoginGUI extends JFrame {
     }
 
     public static void main(String[] args) {
-
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
@@ -84,10 +82,7 @@ public class LoginGUI extends JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
             }
         });
     }
-
-
 }
