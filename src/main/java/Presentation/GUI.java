@@ -46,7 +46,17 @@ public class GUI implements ActionListener{
         frame.setMinimumSize(new Dimension(1040, 680));
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //frame.setDefaultCloseOperation();
+        frame.addWindowListener(new WindowAdapter()
+        {
+            public void windowClosing(WindowEvent e){
+                System.out.println("fermé");
+                try {
+                    SimpleUser.logout();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            }
+        });
 
         frame.setIconImage(img.getImage());
         frame.setResizable(false);
@@ -65,7 +75,7 @@ public class GUI implements ActionListener{
         users.setBounds(5,260, 290,380);
         users.setBackground(Constants.mainColor);
 
-       discussion_panel.setBorder(BorderFactory.createTitledBorder(Constants.raisedBevelBorder,Constants.CHAT, TitledBorder.LEFT, TitledBorder.TOP, Constants.chatTitleFont, Constants.chatTitleColor));
+        discussion_panel.setBorder(BorderFactory.createTitledBorder(Constants.raisedBevelBorder,Constants.CHAT, TitledBorder.LEFT, TitledBorder.TOP, Constants.chatTitleFont, Constants.chatTitleColor));
         discussion_panel.setBackground(Constants.mainColor);
         discussion_panel.setBounds(300,3,720,635);
         discussion_panel.setLayout(null);

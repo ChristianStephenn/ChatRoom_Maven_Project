@@ -67,6 +67,10 @@ public class SimpleUser {
         output.writeObject(mess+"/-reg@#@#-/\\e");
     }
 
+    public static void logout() throws IOException {
+        send("logout");
+    }
+
     public static String getName(){
         return name;
     }

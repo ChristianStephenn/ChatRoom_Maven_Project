@@ -27,7 +27,7 @@ class ChatRoomTest {
     void ServerThreadTest(){
         ServerThread serverThread = new ServerThread(new Socket());
         serverThread.run();
-        int n=(serverThread.getUsers()).size();
+        int n=(serverThread.getUsersList()).size();
         serverThread.addNewUser();
         //assertEquals(n+1,serverThread.getUsers()).size(););
         //problèmes avec les sockets

@@ -45,7 +45,6 @@ public class User implements Serializable {
         this.ip = ip;
         this.port = port;
     }
-    
     /**
      * Retourne le nom du User.
      *

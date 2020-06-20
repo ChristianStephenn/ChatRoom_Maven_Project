@@ -17,7 +17,7 @@ public class ServerThread extends Thread{
     private Socket socket;
     private ObjectInputStream input;
     private ObjectOutputStream output;
-    private List<User> users;
+    private List<User> usersList;
     private Message message;
 
     public ServerThread(Socket socket) {
@@ -39,8 +39,14 @@ public class ServerThread extends Thread{
             message = Singletons.getGson().fromJson(splitmess[0].toString(),MessType);
             System.out.println(message.getText());
 
-            users = Server.getUsers();
-            Server.broadcast(message);
+            usersList = Server.getUsers();
+            if(message.getText().equals("logout")){
+                //Server.logout();
+                //Server.broadcast(message);//avertir de la deconnexion
+            }else{
+                Server.broadcast(message);
+            }
+
             addNewUser();
             //User user = new User(3000,"jack");
             //output.writeObject(user);		//serialize and write the Student object to the stream
@@ -60,7 +66,7 @@ public class ServerThread extends Thread{
     }
 
     public void addNewUser(){
-        if(users.size() == 0){
+        if(usersList.size() == 0){
             User user = new User(message.getSenderName(),"localhost", message.getPort());
             Server.addUser(user);
         }else{
@@ -72,7 +78,7 @@ public class ServerThread extends Thread{
     }
 
     public boolean userExist(String name){
-        for (User user : users) {
+        for (User user : usersList) {
             if (user.getName().equals(name)) {
                 return true;
             }
@@ -80,7 +86,7 @@ public class ServerThread extends Thread{
         return false;
     }
 
-    public List<User> getUsers() {
-        return users;
+    public List<User> getUsersList() {
+        return usersList;
     }
 }
