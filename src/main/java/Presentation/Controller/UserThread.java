@@ -36,9 +36,6 @@ public class UserThread extends Thread{
             System.out.println(message.getText());
             GUI.printGui(message.getText());
 
-            //User user = new User(3000,"jack");
-            //output.writeObject(user);		//serialize and write the Student object to the stream
-
         } catch (IOException | ClassNotFoundException ex) {
             System.out.println("Server exception: " + ex.getMessage());
             ex.printStackTrace();

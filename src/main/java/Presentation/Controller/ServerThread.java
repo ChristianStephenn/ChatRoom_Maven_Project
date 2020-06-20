@@ -37,19 +37,16 @@ public class ServerThread extends Thread{
             }.getType();
 
             message = Singletons.getGson().fromJson(splitmess[0].toString(),MessType);
-            System.out.println(message.getText());
 
-            usersList = Server.getUsers();
+            usersList = Server.getUsersList();
             if(message.getText().equals("logout")){
-                //Server.logout();
+                userLogout();
                 //Server.broadcast(message);//avertir de la deconnexion
             }else{
+                System.out.println(message.getText());
                 Server.broadcast(message);
+                addNewUser();
             }
-
-            addNewUser();
-            //User user = new User(3000,"jack");
-            //output.writeObject(user);		//serialize and write the Student object to the stream
 
         } catch (IOException | ClassNotFoundException ex) {
             System.out.println("Server exception: " + ex.getMessage());
@@ -63,6 +60,11 @@ public class ServerThread extends Thread{
                 ioe.printStackTrace();
             }
         }
+    }
+
+    public void userLogout(){
+        User user = new User(message.getSenderName(),"localhost", message.getPort());
+        Server.logout(user);
     }
 
     public void addNewUser(){

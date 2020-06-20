@@ -16,7 +16,7 @@ public class Server{
     private static ObjectOutputStream output;
     private String ip = "localhost";
     private static ServerSocket ss;
-    private static List<User> users = new ArrayList<User>();
+    private static List<User> usersList = new ArrayList<User>();
 
     public static void connect(String ip) {
         try {
@@ -43,7 +43,7 @@ public class Server{
     }
 
     public static void broadcast(Message message) throws IOException {
-        for (User user : users) {
+        for (User user : usersList) {
             send(message, user.getIp(), user.getPort());
         }
     }
@@ -54,11 +54,23 @@ public class Server{
         output.writeObject(message);
     }
 
-    public static List<User> getUsers(){
-        return users;
+    public static void logout(User user) {
+        for (int i = 0; i < usersList.size(); i++) {
+            /*for (int j = 0; j < usersList.size(); j++) {
+                System.out.println(usersList.get(j).getName() + i);
+            }*/
+            if(usersList.get(i).getName().equals(user.getName())){
+                usersList.remove(i);
+                break;
+            }
+        }
+    }
+
+    public static List<User> getUsersList(){
+        return usersList;
     }
 
     public static void addUser(User user ){
-        users.add(user);
+        usersList.add(user);
     }
 }

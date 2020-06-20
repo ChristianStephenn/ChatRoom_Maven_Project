@@ -20,7 +20,7 @@ class ChatRoomTest {
     void ServerUserTest(){
         Server.addUser(new User("Alain","localhost",6660));
         Server.addUser(new User("Bob","localhost", 6969));
-        assertEquals(2,Server.getUsers().size());
+        assertEquals(2,Server.getUsersList().size());
     }
 
     @Test
