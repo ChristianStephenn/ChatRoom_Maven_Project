@@ -74,15 +74,6 @@ public class LoginGUI extends JFrame {
     }
 
     public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-                    LoginGUI window = new LoginGUI();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+        LoginGUI window = new LoginGUI();
     }
 }

@@ -7,7 +7,6 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class GUI implements ActionListener{
 
@@ -38,13 +37,13 @@ public class GUI implements ActionListener{
         /*Scanner scan = new Scanner(System.in);
         System.out.print("Enter name: ");
         String name = scan.nextLine();*/
-        simpleUser.connect(name, "localhost");
+        simpleUser.connect(name, Constants.HOSTIP);
     }
 
     public GUI(String name) { // login GUI
         initGUI();
         simpleUser = new SimpleUser();
-        simpleUser.connect(name, "localhost");
+        simpleUser.connect(name, Constants.HOSTIP);
     }
 
     public void initGUI(){
@@ -57,7 +56,6 @@ public class GUI implements ActionListener{
         frame.addWindowListener(new WindowAdapter()
         {
             public void windowClosing(WindowEvent e){
-                System.out.println("fermé");
                 try {
                     SimpleUser.logout();
                 } catch (IOException ioException) {
@@ -114,7 +112,6 @@ public class GUI implements ActionListener{
             try {
                 SimpleUser.send(SimpleUser.getName() + " : " + write_text_field.getText());
                 write_text_field.setText("");
-                //printMessages();
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -135,7 +132,6 @@ public class GUI implements ActionListener{
             try {
                 SimpleUser.send(SimpleUser.getName() + " : " + write_text_field.getText());
                 write_text_field.setText("");
-                //printMessages();
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -149,14 +145,6 @@ public class GUI implements ActionListener{
         frame.add(panel, BorderLayout.CENTER);
         frame.pack();
         frame.setVisible(true);
-        frame.validate();
-        frame.repaint();
-    }
-
-    private void printMessages() {
-        messagesHTML += write_text_field.getText() + "<br>";
-        //showText_label.setText(messagesHTML + "</html>");
-        write_text_field.setText("");
     }
 
     public static void printGui(String message){

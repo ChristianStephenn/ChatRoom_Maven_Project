@@ -8,6 +8,7 @@ import Presentation.Model.User;
 import Presentation.Xml;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.net.Socket;
 import java.util.Date;
 import java.util.List;
@@ -24,7 +25,7 @@ class ChatRoomTest {
     }
 
     @Test
-    void ServerThreadTest(){
+    void ServerThreadTest() throws IOException, InterruptedException {
         ServerThread serverThread = new ServerThread(new Socket());
         serverThread.run();
         int n=(serverThread.getUsersList()).size();
@@ -96,8 +97,4 @@ class ChatRoomTest {
         assertEquals(loginGUI,false);
 
     }
-
-
-
-
 }

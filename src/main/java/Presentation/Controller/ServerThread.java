@@ -1,5 +1,6 @@
 package Presentation.Controller;
 
+import Presentation.Constants;
 import Presentation.Model.Message;
 import Presentation.Model.User;
 import Presentation.Singletons;
@@ -10,6 +11,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.lang.reflect.Type;
 import java.net.Socket;
+import java.util.Date;
 import java.util.List;
 
 public class ServerThread extends Thread{
@@ -41,14 +43,13 @@ public class ServerThread extends Thread{
             usersList = Server.getUsersList();
             if(message.getText().equals("logout")){
                 userLogout();
-                //Server.broadcast(message);//avertir de la deconnexion
             }else{
                 System.out.println(message.getText());
                 Server.broadcast(message);
                 addNewUser();
             }
 
-        } catch (IOException | ClassNotFoundException ex) {
+        } catch (IOException | ClassNotFoundException | InterruptedException ex) {
             System.out.println("Server exception: " + ex.getMessage());
             ex.printStackTrace();
 
@@ -62,19 +63,23 @@ public class ServerThread extends Thread{
         }
     }
 
-    public void userLogout(){
+    public void userLogout() throws IOException {
         User user = new User(message.getSenderName(),"localhost", message.getPort());
         Server.logout(user);
+        Message logoutMessage = new Message("admin", 6000, message.getSenderName() + " is disconnected", Constants.dateFormat.format(new Date()));
+        Server.broadcast(logoutMessage);
     }
 
-    public void addNewUser(){
+    public void addNewUser() throws IOException, InterruptedException {
         if(usersList.size() == 0){
             User user = new User(message.getSenderName(),"localhost", message.getPort());
             Server.addUser(user);
+            Server.printOldMessages(user);
         }else{
             if(!userExist(message.getSenderName())){
                 User user = new User(message.getSenderName(),"localhost", message.getPort());
                 Server.addUser(user);
+                Server.printOldMessages(user);
             }
         }
     }
