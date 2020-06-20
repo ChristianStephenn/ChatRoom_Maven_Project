@@ -14,9 +14,9 @@ public class Constants {
     public static String TITLE = "Chat Room";
     public static String LOGO_DIRECTORY = "./image/Logo.PNG";
     public static String BUTTON_DIRECTORY = "./image/coussinet_button.PNG";
-    public static String USERS = "Utilisateurs en ligne";
+    public static String USERS = "Online users";
     public static String CHAT = "Chat";
-    public static String WRITE = "Taper un message";
+    public static String WRITE = "Write a message";
 
     public static Color mainColor = new Color(189, 158, 232, 255);
     public static Color barExtColor = new Color(185, 138, 243, 255);
