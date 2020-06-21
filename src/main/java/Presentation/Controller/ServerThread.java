@@ -16,7 +16,7 @@ import java.util.List;
 
 public class ServerThread extends Thread{
 
-    private Socket socket;
+    private final Socket socket;
     private ObjectInputStream input;
     private ObjectOutputStream output;
     private List<User> usersList;
@@ -33,7 +33,7 @@ public class ServerThread extends Thread{
             output = new ObjectOutputStream(socket.getOutputStream());
 
             String mess = (String) input.readObject();     //deserialize and read the Student object from the stream
-            String[] splitmess = mess.split("/-reg@#@#-/");
+            String[] splitmess = mess.split(Constants.REGEX);
 
             Type MessType = new TypeToken<Message>() {
             }.getType();
@@ -64,29 +64,29 @@ public class ServerThread extends Thread{
     }
 
     public void userLogout() throws IOException {
-        User user = new User(message.getSenderName(),"localhost", message.getPort());
+        User user = new User(message.getSenderName(),Constants.HOSTIP, message.getPort());
         Server.logout(user);
-        Message logoutMessage = new Message("admin", 6000, message.getSenderName() + " is disconnected", Constants.dateFormat.format(new Date()));
+        Message logoutMessage = new Message("Server", 6000, message.getSenderName() + " is disconnected", Constants.dateFormat.format(new Date()));
         Server.broadcast(logoutMessage);
     }
 
     public void addNewUser() throws IOException, InterruptedException {
         if(usersList.size() == 0){
-            User user = new User(message.getSenderName(),"localhost", message.getPort());
+            User user = new User(message.getSenderName(),Constants.HOSTIP, message.getPort());
             Server.addUser(user);
             Server.printOldMessages(user);
         }else{
-            if(!userExist(message.getSenderName())){
-                User user = new User(message.getSenderName(),"localhost", message.getPort());
+            if(!userExist(message.getSenderName(), message.getPort())){
+                User user = new User(message.getSenderName(),Constants.HOSTIP, message.getPort());
                 Server.addUser(user);
                 Server.printOldMessages(user);
             }
         }
     }
 
-    public boolean userExist(String name){
+    public boolean userExist(String name, int port){
         for (User user : usersList) {
-            if (user.getName().equals(name)) {
+            if (user.getName().equals(name) && user.getPort() == port) {
                 return true;
             }
         }

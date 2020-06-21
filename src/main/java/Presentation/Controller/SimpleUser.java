@@ -20,7 +20,7 @@ public class SimpleUser {
     private static ServerSocket ss;
     static Message message;
 
-    public void connect(String name, String ip) {
+    public void connect(String name) {
         this.name = name;
         int min = 6500;
         int max = 7000;

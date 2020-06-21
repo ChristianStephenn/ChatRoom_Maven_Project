@@ -1,6 +1,5 @@
 package Presentation.Controller;
 
-import Presentation.Constants;
 import Presentation.GUI;
 import Presentation.Model.Message;
 
@@ -8,16 +7,12 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.Date;
-import java.util.Scanner;
 
 public class UserThread extends Thread{
-    private Socket socket;
+    private final Socket socket;
     private ObjectInputStream input;
     private ObjectOutputStream output;
-    private Scanner scan;
     private String name;
-    private int port;
     private Message message;
 
     public UserThread(Socket socket) {
@@ -25,8 +20,6 @@ public class UserThread extends Thread{
     }
 
     public void run() {
-        String tmpString;
-        scan = new Scanner(System.in);
         try {
             //create the streams that will handle the objects coming through the sockets
             input = new ObjectInputStream(socket.getInputStream());
@@ -39,7 +32,6 @@ public class UserThread extends Thread{
         } catch (IOException | ClassNotFoundException ex) {
             System.out.println("Server exception: " + ex.getMessage());
             ex.printStackTrace();
-
         } finally {
             try {
                 output.close();
@@ -50,8 +42,8 @@ public class UserThread extends Thread{
         }
     }
 
-    public void send(String str) throws IOException {
+    /*public void send(String str) throws IOException {
         message = new Message(name, port, str, Constants.dateFormat.format(new Date()));
         output.writeObject(message);
-    }
+    }*/
 }

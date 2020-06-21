@@ -37,13 +37,13 @@ public class GUI implements ActionListener{
         /*Scanner scan = new Scanner(System.in);
         System.out.print("Enter name: ");
         String name = scan.nextLine();*/
-        simpleUser.connect(name, Constants.HOSTIP);
+        simpleUser.connect(name);
     }
 
     public GUI(String name) { // login GUI
         initGUI();
         simpleUser = new SimpleUser();
-        simpleUser.connect(name, Constants.HOSTIP);
+        simpleUser.connect(name);
     }
 
     public void initGUI(){

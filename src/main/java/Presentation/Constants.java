@@ -11,6 +11,7 @@ public class Constants {
     public static final String XMLMESSAGES_INPUT_FILE = "src/main/java/messages.xml";
     public static final String XMLMESSAGES_OUTPUT_FILE = "src/main/java/messages.xml";
     public static final String HOSTIP = "localhost";
+    public static final String REGEX = "/-reg@#@#-/";
     
     public static String TITLE = "Chat Room";
     public static String LOGO_DIRECTORY = "./image/Logo.PNG";
