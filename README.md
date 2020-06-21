@@ -60,10 +60,13 @@ Bouton activé
 
 Permet de supprimer la conversation.
 
-<img scr="https://user-images.githubusercontent.com/63911484/85234340-fb7b7200-b40c-11ea-81ba-a7a3be07634d.png">
+<img src="https://user-images.githubusercontent.com/63911484/85234737-d805f680-b40f-11ea-86db-ce67ee282a96.png">
+
 
 * _Paint Button_ :
 
-<img src="https://user-images.githubusercontent.com/63911484/85234385-50b78380-b40d-11ea-86d2-83882767880a.png">
+<img src="https://user-images.githubusercontent.com/63911484/85234785-2adfae00-b410-11ea-8016-fb1e3c8e1753.png"> Permet d'accéder à la zone de dessin. 
 
 Ouvre une nouvelle fenêtre où l'utilisateur pourra dessiner et envoyer son dessin dans la conversation : **_EN COURS_**
+
+<img src="https://user-images.githubusercontent.com/63911484/85234385-50b78380-b40d-11ea-86d2-83882767880a.png">
