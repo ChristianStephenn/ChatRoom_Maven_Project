@@ -9,6 +9,9 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 
+/**
+* <b>GUI est la classe qui permet afficher l'interface graphique du ChatRoom</b>
+*/
 public class GUI implements ActionListener{
 
     private final JPanel users = new JPanel();
@@ -39,7 +42,12 @@ public class GUI implements ActionListener{
 
     private static String messagesHTML = "<html>";
     private static String onlineUsersHTML = "<html>";
-
+    
+/**
+* Constructeur GUI
+*
+* @see SimpleUSer
+*/
     public GUI() {
         String name = JOptionPane.showInputDialog("Enter name");
         initGUI();
@@ -47,12 +55,24 @@ public class GUI implements ActionListener{
         simpleUser.connect(name);
     }
 
+    /**
+    * Constructeur GUI surchargé
+    *
+    * @param name
+    *             Nom de l'utilisateur
+    * @see SimpleUser
+    */
     public GUI(String name) { // login GUI
         initGUI();
         simpleUser = new SimpleUser();
         simpleUser.connect(name);
     }
 
+    /**
+    * Initialise le GUI
+    *
+    * @see SimpleUser
+    */
     public void initGUI(){
         JFrame frame = new JFrame(Constants.TITLE);
         JPanel panel = new JPanel();
@@ -184,21 +204,39 @@ public class GUI implements ActionListener{
         frame.setVisible(true);
     }
 
+    /**
+     * Envoie un message sur la zone de discussion
+     *
+     * @param message
+     *              Message saisie
+     */
     public static void printGui(String message){
         messagesHTML += message + "<br>";
         showText_label.setText(messagesHTML + "</html>");
     }
 
+    /**
+    * Rafraichit les utilisateurs en ligne
+    *
+    * @param name
+    *              Nom de l'utilisateur
+    */
     public static void refreshOnlineUsers(String name) {
         onlineUsersHTML += name + "<br>";
         showUser.setText(onlineUsersHTML + "</html>");
     }
 
+    /**
+    * Rafraichit la discussion
+    */
     public static void refreshGUI() {
         showText_label.setText("");
         messagesHTML = "<html>";
     }
 
+    /**
+    * Rafraichit la zone des utilisateurs en ligne lorsqu'il y a une déconnexion
+    */
     public static void refreshLogout(String name){
         String[] splitmess = onlineUsersHTML.split("<br>");
         onlineUsersHTML = "<html>";
@@ -214,6 +252,12 @@ public class GUI implements ActionListener{
         showUser.setText(onlineUsersHTML + "</html>");
     }
 
+    /**
+    * Affiche le GUI
+    *
+    * @param args
+    *                 parametre du main
+    */
     public static void main(String[] args) {
         new GUI();
     }
