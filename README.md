@@ -17,10 +17,19 @@ MOORGHEN Shéréna : [_Luzarios_](https://github.com/Luzarios/) <img src="https:
 
 THIAO-LAYEL Vincent : [_chillybrise_](https://github.com/chillybrise/) <img src="https://user-images.githubusercontent.com/63911484/85231852-db42b780-b3fa-11ea-8696-81cb96637bcb.png">
 
+## Lancement de l'application
+Pour lancer le Chat Room, il faut dans un premier temps _Run_ la classe ChatRoom puis toujours _Run_ la classe GUI autant de fois qu'il le faut (pour avoir le nombre d'utilisateur).
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/63911484/85235263-dd654000-b413-11ea-889d-fd357167f116.png">
+</p>
+
 ## Le login
 Première fenêtre où il faut choisir un pseudo pour accéder à la conversation.
 ### Version provisoire
+<p align="center">
 <img src="https://user-images.githubusercontent.com/63911484/85234340-fb7b7200-b40c-11ea-81ba-a7a3be07634d.png">
+</p>
 
 ### Version finale (en cours)
 * Espace de connexion : Se connecter avec un compte existant
@@ -36,7 +45,9 @@ Première fenêtre où il faut choisir un pseudo pour accéder à la conversatio
 ### Deux zones :
 * _Online users_ : dresse une liste des utilisateurs connectés.
 
+<p align="center">
 <img src="https://user-images.githubusercontent.com/63911484/85234544-53ff3f00-b40e-11ea-9d6c-de41391e912d.png">
+</p>
 
 * _Chat_ : affichera la conversation entre les utilisateurs.
 
@@ -47,8 +58,8 @@ Première fenêtre où il faut choisir un pseudo pour accéder à la conversatio
 
 <img src="https://user-images.githubusercontent.com/63911484/85234681-544c0a00-b40f-11ea-90d7-9e831da71c29.png">
 
-Bouton entrer, fonctionne en _cliquant_ dessus ou en appyuant sur la touche `Entrer`.
-Barre de saisie de texte, écrire un message.
+Bouton coussinet, fonctionne en _cliquant_ dessus ou en appyuant sur la touche `Entrer`.
+Barre de saisie de texte, pour écrire un message.
 
 * _Delete button_ :
 
@@ -69,4 +80,6 @@ Permet de supprimer la conversation.
 
 Ouvre une nouvelle fenêtre où l'utilisateur pourra dessiner et envoyer son dessin dans la conversation : **_EN COURS_**
 
+<p align="center">
 <img src="https://user-images.githubusercontent.com/63911484/85234385-50b78380-b40d-11ea-86d2-83882767880a.png">
+</p>
