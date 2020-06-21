@@ -1,12 +1,15 @@
 package Presentation.Controller;
 
+import Presentation.Constants;
 import Presentation.GUI;
 import Presentation.Model.Message;
+import Presentation.Model.User;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.List;
 
 public class UserThread extends Thread{
     private final Socket socket;
@@ -26,8 +29,17 @@ public class UserThread extends Thread{
             output = new ObjectOutputStream(socket.getOutputStream());
 
             message = (Message) input.readObject();
-            System.out.println(message.getText());
-            GUI.printGui(message.getText());
+            if(message.getText().contains("Online_Users_List")){
+                String[] splitmess = message.getText().split(Constants.REGEX);
+                GUI.refreshOnlineUsers(splitmess[1]);
+            }else{
+                System.out.println(message.getText());
+                GUI.printGui(message.getText());
+            }
+            if(message.getText().contains("is connected")){
+                //Server.sendOnlineUsers(user);
+                GUI.refreshOnlineUsers(message.getSenderName());
+            }
 
         } catch (IOException | ClassNotFoundException ex) {
             System.out.println("Server exception: " + ex.getMessage());

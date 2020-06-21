@@ -71,17 +71,22 @@ public class ServerThread extends Thread{
     }
 
     public void addNewUser() throws IOException, InterruptedException {
+        User user = new User(message.getSenderName(),Constants.HOSTIP, message.getPort());
         if(usersList.size() == 0){
-            User user = new User(message.getSenderName(),Constants.HOSTIP, message.getPort());
             Server.addUser(user);
             Server.printOldMessages(user);
+            Server.sendOnlineUsers(user);
         }else{
             if(!userExist(message.getSenderName(), message.getPort())){
-                User user = new User(message.getSenderName(),Constants.HOSTIP, message.getPort());
                 Server.addUser(user);
                 Server.printOldMessages(user);
+                Server.sendOnlineUsers(user);
             }
         }
+
+        /*if(message.getText().contains("is connected")){
+            Server.sendOnlineUsers(user);
+        }*/
     }
 
     public boolean userExist(String name, int port){
