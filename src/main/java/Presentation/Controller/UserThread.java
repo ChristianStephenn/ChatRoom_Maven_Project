@@ -74,8 +74,10 @@ public class UserThread extends Thread{
                 GUI.refreshOnlineUsers(splitmess[1]);
             }else if (message.getText().contains("is connected")){
                 GUI.refreshOnlineUsers(message.getSenderName());
+                GUI.printGui(message.getText());
             }else if (message.getText().contains("is disconnected")){
                 GUI.refreshLogout(message.getSenderName());
+                GUI.printGui(message.getText());
             }else if (message.getText().contains("Clear_Messages")){
                 GUI.refreshGUI();
             }else{
@@ -95,5 +97,4 @@ public class UserThread extends Thread{
             }
         }
     }
-
 }
