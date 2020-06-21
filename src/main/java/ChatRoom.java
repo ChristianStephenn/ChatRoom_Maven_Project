@@ -6,7 +6,12 @@ import Presentation.Controller.Server;
   */
 
 public class ChatRoom {
-
+ 
+ /**
+  * Se connecte au serveur.
+  *
+  * @see Server
+  */
     public static void main(String[] args) {
         Server.connect(Constants.HOSTIP);
     }
