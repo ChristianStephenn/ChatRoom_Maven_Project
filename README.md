@@ -1,7 +1,7 @@
 # ChatRoom Maven Project
 ### Groupe : _AYMARD Théo, LAPY Arnaud, MARIASTEPHEN Christian, MOORGHEN Mégane, MOORGHEN Shéréna & THIAO-LAYEL Vincent_
 
-Le but du projet est de créer une application de bureau en _JAVA_. Ci-dessous se trouvera un aperçu de l'application que nous avons nommé _Chat Room_.
+Le but du projet est de créer une application de bureau en **_JAVA_**. Ci-dessous se trouvera un aperçu de l'application que nous avons nommé _Chat Room_.
 
 ## Membres Git
 
@@ -19,8 +19,14 @@ THIAO-LAYEL Vincent : [_chillybrise_](https://github.com/chillybrise/) <img src=
 
 ## Le login
 Première fenêtre où il faut choisir un pseudo pour accéder à la conversation.
-
+### Version provisoire
 <img>
+
+### Version finale
+* Espace de connexion & Formulaire d'inscription :
+<img>
+
+Se connecter avec un compte existant ou pour ce créer un nouveau compte utilisateur
 
 ## Fenêtre de conversation
 
