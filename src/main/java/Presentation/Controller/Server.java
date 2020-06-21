@@ -19,6 +19,11 @@ public class Server{
     private static ObjectOutputStream output;
     private static ServerSocket ss;
     private static final List<User> usersList = new ArrayList<>();
+
+    public static List<Message> getMessagesList() {
+        return messagesList;
+    }
+
     private static List<Message> messagesList = new ArrayList<>();
     private static final Xml XMLCHATROOM = new Xml();
 
