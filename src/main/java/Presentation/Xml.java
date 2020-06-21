@@ -20,13 +20,28 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+  * <b>Xml est une classe qui va créer un fichier Xml et sauvegarder tous les messages de la discussion du ChatRoom.</b>
+  * <p>
+  * Xml contient :
+  * <ul>
+  * <li>Quatre paramètres configurables qui permet de lire un fichier Xml en utilisant Xpath en Java.</li>
+  *</ul>
+  * </p>
+  */
 public class Xml {
 
+    /**
+     * Les quatres parmamètres permmettant de lire un fichier Xml.
+     */
     private DocumentBuilderFactory documentFactory;
     private DocumentBuilder documentBuilder;
     private TransformerFactory transformerFactory;
     private Transformer transformer;
-
+    
+    /**
+     * Constructeur de Xml.
+     */
     public Xml() {
         try {
             documentFactory = DocumentBuilderFactory.newInstance();
@@ -37,7 +52,14 @@ public class Xml {
             pce.printStackTrace();
         }
     }
-
+    /**
+     * Analyse les éléments du fichier Xml.
+     * Retourne la liste de noeuds.
+     * @param filePath
+     *              Le chemin du fichier.
+     *
+     * @return la liste dde noeuds.
+     */
     public NodeList parseXMLFile (String filePath) {
         NodeList elementNodes = null;
         try {
@@ -49,7 +71,14 @@ public class Xml {
 
         return elementNodes;
     }
-
+    
+    /**
+     * Retourne la liste de messages.
+     *
+     * @return la liste de messages.
+     *
+     * @see Message
+     */
     public List<Message> readXMLMessages() {
         NodeList nodes = this.parseXMLFile(Constants.XMLMESSAGES_INPUT_FILE);
         if (nodes == null) {
@@ -78,10 +107,24 @@ public class Xml {
         return messagesList;
     }
 
+    /**
+     * Retourne un document de type Xml.
+     *
+     * @return un document de type Xml.
+     */
     public Document createXMLDocument() {
         return documentBuilder.newDocument();
     }
 
+    /**
+     * Crée un fichier Xml.
+     *
+     * @param document
+     *              Le document concerné.
+     *
+     * @param filePath
+     *              Le chemin du fichier.
+     */
     public void createXMLFile(Document document, String filePath) {
         try {
             DOMSource domSource = new DOMSource(document);
@@ -95,7 +138,14 @@ public class Xml {
         System.out.println("Done creating XML File");
     }
 
-    public void writeXMLMessages(List<Message> messagesList) {
+    /**
+     * Ecrit les messages sur le fichier Xml.
+     * 
+     * @param messageList
+     *              La liste des messages.
+     * @see Message
+     */
+     public void writeXMLMessages(List<Message> messagesList) {
         Document document = this.createXMLDocument();
         if (document == null) return;
 
