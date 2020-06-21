@@ -12,6 +12,11 @@ public class GUI implements ActionListener{
 
     private JPanel users = new JPanel();
     private JLabel showUser = new JLabel();
+    
+    private JButton deleteButton = new JButton();
+    private ImageIcon img_bin_button = new ImageIcon(Constants.BIN_BUTTON_DIRECTORY);
+    private ImageIcon img_bin_button2 = new ImageIcon(Constants.BIN_BUTTON_DIRECTORY2);
+    private JLabel bin_text = new JLabel(Constants.BIN_MESSAGE);
 
     private ImageIcon img = new ImageIcon(Constants.LOGO_DIRECTORY);
     private JLabel image_label = new JLabel(img);
@@ -73,15 +78,38 @@ public class GUI implements ActionListener{
         panel.add(image_label);
         panel.add(users);
         panel.add(discussion_panel);
+        panel.add(deleteButton);
+        panel.add(bin_text);
         
         image_label.setBounds(45,10, 200,250);
 
         users.setBorder(BorderFactory.createTitledBorder(Constants.loweredBevelBorder,Constants.USERS, TitledBorder.CENTER, TitledBorder.TOP, Constants.userTitleFont, Constants.userTitleColor));
         users.setLayout(new FlowLayout(FlowLayout.LEFT));
-        users.setBounds(5,260, 290,380);
+        users.setBounds(5,260, 290,340);
         users.setBackground(Constants.mainColor);
         users.add(showUser);
         showUser.setText(write_text_field.getText());
+        
+        bin_text.setBounds(60,602,200,30);
+        bin_text.setFont(Constants.font3);
+
+        deleteButton.setBounds(20,602,30,30);
+        deleteButton.setIcon(img_bin_button);
+        deleteButton.setBorder(BorderFactory.createRaisedBevelBorder());
+        deleteButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                deleteButton.setIcon(img_bin_button2);
+                bin_text.setText(Constants.BIN_MESSAGE2);
+            }
+        });
+        deleteButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                deleteButton.setIcon(img_bin_button);
+                bin_text.setText(Constants.BIN_MESSAGE);
+            }
+        });
 
         discussion_panel.setBorder(BorderFactory.createTitledBorder(Constants.raisedBevelBorder,Constants.CHAT, TitledBorder.LEFT, TitledBorder.TOP, Constants.chatTitleFont, Constants.chatTitleColor));
         discussion_panel.setBackground(Constants.mainColor);
