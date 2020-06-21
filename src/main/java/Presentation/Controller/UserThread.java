@@ -9,16 +9,58 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
+/**
+ * <b>UserThread est la classe qui permet d'envoyer les sockets reçue par le serveur</b>
+ * <div>
+ * UserThread contient :
+ * <ul>
+ * <li>Un Socket pour la communication</li>
+ * <li>Un ObjectInputStream pour serialiser un objet (lecture)</li>
+ * <li>Un ObjectOutputStream pour serialiser un objet (ecriture)</li>
+ * <li>Un message</li>
+ * </ul>
+ * </div>
+ *
+ *
+ */
 public class UserThread extends Thread{
+    
+    /**
+     * Favorise la communication entre les utilisateurs
+     */
     private final Socket socket;
+    
+    /**
+     * Serialise l'objet (lecture)
+     */
     private ObjectInputStream input;
+    
+    /**
+     * Serialise l'objet (ecriture)
+     */
     private ObjectOutputStream output;
+    
+    /**
+     * Message de l'utilisateur
+     */
     private Message message;
 
+    /**
+     * Contructeur UserThread surchargé
+     *
+     * @param socket
+     *              Favorise la communication
+     */
     public UserThread(Socket socket) {
         this.socket = socket;
     }
 
+    /**
+     * Met en route le UserThread
+     * 
+     * @see Message
+     * @see GUI
+     */
     public void run() {
         try {
             //create the streams that will handle the objects coming through the sockets
