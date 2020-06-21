@@ -58,7 +58,7 @@ public class Xml {
      * @param filePath
      *              Le chemin du fichier.
      *
-     * @return la liste dde noeuds.
+     * @return la liste de noeuds.
      */
     public NodeList parseXMLFile (String filePath) {
         NodeList elementNodes = null;
