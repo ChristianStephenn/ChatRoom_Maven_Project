@@ -99,7 +99,11 @@ public class GUI implements ActionListener{
             @Override
             public void mousePressed(MouseEvent e) {
                 deleteButton.setIcon(img_bin_button2);
-                bin_text.setText(Constants.BIN_MESSAGE2);
+                try {
+                    SimpleUser.send("Delete_Messages");
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
             }
         });
         deleteButton.addMouseListener(new MouseAdapter() {
@@ -142,7 +146,6 @@ public class GUI implements ActionListener{
             try {
                 SimpleUser.send(SimpleUser.getName() + " : " + write_text_field.getText());
                 write_text_field.setText("");
-                showUser.setText("looo");
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -186,6 +189,11 @@ public class GUI implements ActionListener{
     public static void refreshOnlineUsers(String name) {
         onlineUsersHTML += name + "<br>";
         showUser.setText(onlineUsersHTML + "</html>");
+    }
+
+    public static void refreshGUI() {
+        showText_label.setText("");
+        messagesHTML = "<html>";
     }
 
     public static void refreshLogout(String name){
