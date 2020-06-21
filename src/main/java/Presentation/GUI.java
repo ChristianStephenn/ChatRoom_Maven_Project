@@ -17,7 +17,10 @@ public class GUI implements ActionListener{
     private final ImageIcon img_bin_button = new ImageIcon(Constants.BIN_BUTTON_DIRECTORY);
     private final ImageIcon img_bin_button2 = new ImageIcon(Constants.BIN_BUTTON_DIRECTORY2);
     private final JLabel bin_text = new JLabel(Constants.BIN_MESSAGE);
-
+    
+    private ImageIcon imgp = new ImageIcon(Constants.PAINT_DIRECTORY);
+    private JButton paintButton = new JButton();
+    
     private final ImageIcon img = new ImageIcon(Constants.LOGO_DIRECTORY);
     private final JLabel image_label = new JLabel(img);
 
@@ -77,7 +80,8 @@ public class GUI implements ActionListener{
         panel.add(discussion_panel);
         panel.add(deleteButton);
         panel.add(bin_text);
-        
+        panel.add(paintButton);
+
         image_label.setBounds(45,10, 200,250);
 
         users.setBorder(BorderFactory.createTitledBorder(Constants.loweredBevelBorder,Constants.USERS, TitledBorder.CENTER, TitledBorder.TOP, Constants.userTitleFont, Constants.userTitleColor));
@@ -86,11 +90,17 @@ public class GUI implements ActionListener{
         users.setBackground(Constants.mainColor);
         users.add(showUser);
 
-        showUser.setFont(Constants.font2);
+        //JLabel userAvatar = new JLabel(Constants.avatar2);
+        //users.add(userAvatar);
+        
+        showUser.setFont(Constants.fontUser);
         showUser.setForeground(Constants.userTitleColorColor);
         
         bin_text.setBounds(60,602,200,30);
         bin_text.setFont(Constants.font3);
+        
+        paintButton.setBounds(260,220,40,40);
+        paintButton.setIcon(imgp);
 
         deleteButton.setBounds(20,602,30,30);
         deleteButton.setIcon(img_bin_button);
@@ -99,7 +109,11 @@ public class GUI implements ActionListener{
             @Override
             public void mousePressed(MouseEvent e) {
                 deleteButton.setIcon(img_bin_button2);
-                bin_text.setText(Constants.BIN_MESSAGE2);
+                try {
+                    SimpleUser.send("Delete_Messages");
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
             }
         });
         deleteButton.addMouseListener(new MouseAdapter() {
@@ -142,7 +156,6 @@ public class GUI implements ActionListener{
             try {
                 SimpleUser.send(SimpleUser.getName() + " : " + write_text_field.getText());
                 write_text_field.setText("");
-                showUser.setText("looo");
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -186,6 +199,11 @@ public class GUI implements ActionListener{
     public static void refreshOnlineUsers(String name) {
         onlineUsersHTML += name + "<br>";
         showUser.setText(onlineUsersHTML + "</html>");
+    }
+
+    public static void refreshGUI() {
+        showText_label.setText("");
+        messagesHTML = "<html>";
     }
 
     public static void refreshLogout(String name){

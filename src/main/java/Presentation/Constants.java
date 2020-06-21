@@ -15,6 +15,7 @@ public class Constants {
     
     public static String TITLE = "Chat Room";
     public static String LOGO_DIRECTORY = "./image/Logo.PNG";
+    public static String PAINT_DIRECTORY = "./image/paint.PNG";
     public static String BUTTON_DIRECTORY = "./image/coussinet_button.PNG";
     public static String BIN_BUTTON_DIRECTORY = "./image/poubox.PNG";
     public static String BIN_BUTTON_DIRECTORY2 = "./image/poubix.PNG";
@@ -22,7 +23,12 @@ public class Constants {
     public static String CHAT = "Chat";
     public static String WRITE = "Write a message";
     public static String BIN_MESSAGE = "Click me to delete the conversation";
-    public static String BIN_MESSAGE2 = "Conversation deleted !";
+    public static String AVATAR1_DIRECTORY = "./image/avatar1.PNG";
+    public static String AVATAR2_DIRECTORY = "./image/avatar2.PNG";
+    public static String AVATAR3_DIRECTORY = "./image/avatar3.PNG";
+    public static String AVATAR4_DIRECTORY = "./image/avatar4.PNG";
+    public static String AVATAR5_DIRECTORY = "./image/avatar5.PNG";
+    public static String AVATAR6_DIRECTORY = "./image/avatar6.PNG";
 
     public static Color mainColor = new Color(189, 158, 232, 255);
     public static Color barExtColor = new Color(185, 138, 243, 255);
@@ -41,9 +47,18 @@ public class Constants {
 
     public static Font font = new Font("Comic sans MS", Font.BOLD | Font.ITALIC, 13);
     public static Font font2 = new Font("Comic sans MS",Font.BOLD, 15);
+    public static Font fontUser = new Font("Comic sans MS",Font.BOLD, 18);
     public static Font font3 = new Font("Comic sans MS", Font.ITALIC, 10);
     public static Font userTitleFont =  new Font("comic sans ms",Font.BOLD|Font.ITALIC,18);
     public static Font chatTitleFont =  new Font("comic sans ms",Font.BOLD|Font.ITALIC,15);
+    
+    public static ImageIcon avatar1 = new ImageIcon(AVATAR1_DIRECTORY);
+    public static ImageIcon avatar2 = new ImageIcon(AVATAR2_DIRECTORY);
+    public static ImageIcon avatar3 = new ImageIcon(AVATAR3_DIRECTORY);
+    public static ImageIcon avatar4 = new ImageIcon(AVATAR4_DIRECTORY);
+    public static ImageIcon avatar5 = new ImageIcon(AVATAR5_DIRECTORY);
+    public static ImageIcon avatar6 = new ImageIcon(AVATAR6_DIRECTORY);
+
 
    
 }

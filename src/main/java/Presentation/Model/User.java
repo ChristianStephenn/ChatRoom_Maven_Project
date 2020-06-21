@@ -4,14 +4,14 @@ import java.io.Serializable;
 
 /**
   * <b>User est une classe qui permet d'obtenir toutes les informations nécessaires lorsqu'il se connecte sur Chat Room.</b>
-  * <p>
+  * <div>
   * User contient :
   * <ul>
   * <li>Nom</li>
   * <li>Ip</li>
   * <li>Port</li>
-  *</ul>
-  * </p>
+  * </ul>
+  * </div>
   */
 public class User implements Serializable {
     

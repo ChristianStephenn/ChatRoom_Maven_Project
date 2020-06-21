@@ -14,18 +14,65 @@ import java.net.Socket;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * <b>ServerThread est la classe qui permet d'envoyer les sockets reçue par le Serveur</b>
+ * <div>
+ * UserThread contient :
+ * <ul>
+ * <li>Un Socket pour la communication</li>
+ * <li>Un ObjectInputStream pour serialiser un objet (lecture)</li>
+ * <li>Un ObjectOutputStream pour serialiser un objet (ecriture)</li>
+ * <li>La liste des utilisateurs</li>
+ * <li>Les messages de la discussion</li>
+ * </ul>
+ * </div>
+ *
+ */
 public class ServerThread extends Thread{
 
+    /**
+     * Favorise la communication (au moment des transferts de données)
+     */
     private final Socket socket;
+    
+    /**
+     * Serialise l'objet (ecriture)
+     */
     private ObjectInputStream input;
+    
+    /**
+     * Serialise l'objet (lecture)
+     */
     private ObjectOutputStream output;
+    
+    /**
+     * Liste des utilisateurs en ligne
+     */
     private List<User> usersList;
+    
+    /**
+     * Message saisi
+     */
     private Message message;
 
+    /**
+     * Contructeur ServerTheard
+     *
+     * @param socket
+     *              socket pour le serveur
+     */
     public ServerThread(Socket socket) {
         this.socket = socket;
     }
 
+    /**
+     * Met en route le ServerThread
+     *
+     * @see Message
+     * @see Server
+     * @see Singletons
+     *
+     */
     public void run() {
         try {
             //create the streams that will handle the objects coming through the sockets
@@ -43,6 +90,8 @@ public class ServerThread extends Thread{
             usersList = Server.getUsersList();
             if(message.getText().equals("logout")){
                 userLogout();
+            }else if(message.getText().contains("Delete_Messages")){
+                Server.deleteMessages();
             }else{
                 System.out.println(message.getText());
                 Server.broadcast(message);
@@ -62,14 +111,35 @@ public class ServerThread extends Thread{
             }
         }
     }
-
+    
+    /**
+     * Se déconnecte du ChatRoom
+     * 
+     * @throws IOException relève une exception
+     *
+     * @see User
+     * @see Message
+     * @see Server
+     * @see Constants
+     */
     public void userLogout() throws IOException {
         User user = new User(message.getSenderName(),Constants.HOSTIP, message.getPort());
         Server.logout(user);
         Message logoutMessage = new Message(message.getSenderName(), 6000, message.getSenderName() + " is disconnected", Constants.dateFormat.format(new Date()));
         Server.broadcast(logoutMessage);
     }
-
+    
+    /**
+     * Ajoute un nouvel utilisateur
+     *
+     * @throws IOException relève une exception
+     * @throws InterruptedException relève une interruption
+     *
+     * @see User
+     * @see Server
+     * @see Message
+     * @see Constants
+     */
     public void addNewUser() throws IOException, InterruptedException {
         User user = new User(message.getSenderName(),Constants.HOSTIP, message.getPort());
         if(usersList.size() == 0){
@@ -85,6 +155,18 @@ public class ServerThread extends Thread{
         }
     }
 
+    /**
+     * Renvoie vrai si l'utilisateur existe deja, sinon faux
+     *
+     * @param name
+     *          Nom de l'utilisateur
+     * @param port
+     *          Port de l'utilisateur
+     *
+     * @see User
+     *
+     * @return vrai si l'utilisateur existe, sinon faux
+     */
     public boolean userExist(String name, int port){
         for (User user : usersList) {
             if (user.getName().equals(name) && user.getPort() == port) {
@@ -94,6 +176,11 @@ public class ServerThread extends Thread{
         return false;
     }
 
+    /**
+     * Crée une liste d'utilisateur
+     *
+     * @return la liste des utilisateurs
+     */
     public List<User> getUsersList() {
         return usersList;
     }
