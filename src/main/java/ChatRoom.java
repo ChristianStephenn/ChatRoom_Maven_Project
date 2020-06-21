@@ -17,4 +17,5 @@ public class ChatRoom {
     public static void main(String[] args) {
         Server.connect(Constants.HOSTIP);
     }
+
 }

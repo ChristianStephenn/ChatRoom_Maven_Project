@@ -43,6 +43,8 @@ public class ServerThread extends Thread{
             usersList = Server.getUsersList();
             if(message.getText().equals("logout")){
                 userLogout();
+            }else if(message.getText().contains("Delete_Messages")){
+                Server.deleteMessages();
             }else{
                 System.out.println(message.getText());
                 Server.broadcast(message);

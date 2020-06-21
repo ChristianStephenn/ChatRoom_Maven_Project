@@ -149,9 +149,6 @@ public class Server{
      */
     public static void logout(User user) {
         for (int i = 0; i < usersList.size(); i++) {
-            /*for (int j = 0; j < usersList.size(); j++) {
-                System.out.println(usersList.get(j).getName() + i);
-            }*/
             if(usersList.get(i).getName().equals(user.getName())){
                 usersList.remove(i);
                 break;
@@ -211,4 +208,13 @@ public class Server{
             send(message, user.getIp(), user.getPort());
         }
     }
+
+
+    public static void deleteMessages() throws IOException {
+        messagesList.clear();
+        Message message = new Message("Server", 6000, "Clear_Messages", Constants.dateFormat.format(new Date()));
+        broadcast(message);
+        //XMLCHATROOM.writeXMLMessages(messagesList); sauvegarde XML
+    }
 }
+

@@ -37,6 +37,8 @@ public class UserThread extends Thread{
                 GUI.refreshOnlineUsers(message.getSenderName());
             }else if (message.getText().contains("is disconnected")){
                 GUI.refreshLogout(message.getSenderName());
+            }else if (message.getText().contains("Clear_Messages")){
+                GUI.refreshGUI();
             }
 
         } catch (IOException | ClassNotFoundException ex) {
