@@ -5,17 +5,17 @@ Le but du projet est de créer une application de bureau en _JAVA_. Ci-dessous s
 
 ## Membres Git
 
-AYMARD Théo : [_Taymard_](https://github.com/Taymard/)
+AYMARD Théo : [_Taymard_](https://github.com/Taymard/) <img src="https://user-images.githubusercontent.com/63911484/85231851-db42b780-b3fa-11ea-9e89-467bf5726088.png" width="60" height="60">
 
-LAPY Arnaud : [_arnaudlapy_](https://github.com/arnaudlapy/)
+LAPY Arnaud : [_arnaudlapy_](https://github.com/arnaudlapy/) <img src="https://user-images.githubusercontent.com/63911484/85231845-d978f400-b3fa-11ea-8d27-8d194b1e05df.png">
 
-MARIASTEPHEN Christian : [_ChristianStephenn_](https://github.com/ChristianStephenn/)
+MARIASTEPHEN Christian : [_ChristianStephenn_](https://github.com/ChristianStephenn/) <img src="https://user-images.githubusercontent.com/63911484/85231847-da118a80-b3fa-11ea-89de-a791e4eb352d.png" width="60" height="60">
 
-MOORGHEN Mégane : [_Meganenou_](https://github.com/Meganenou/)
+MOORGHEN Mégane : [_Meganenou_](https://github.com/Meganenou/) <img src="https://user-images.githubusercontent.com/63911484/85231848-daaa2100-b3fa-11ea-9ab5-072d2b71676b.png">
 
-MOORGHEN Shéréna : [_Luzarios_](https://github.com/Luzarios/)
+MOORGHEN Shéréna : [_Luzarios_](https://github.com/Luzarios/) <img src="https://user-images.githubusercontent.com/63911484/85231850-daaa2100-b3fa-11ea-80dc-5836774c4780.png">
 
-THIAO-LAYEL Vincent : [_chillybrise_](https://github.com/chillybrise/)
+THIAO-LAYEL Vincent : [_chillybrise_](https://github.com/chillybrise/) <img src="https://user-images.githubusercontent.com/63911484/85231852-db42b780-b3fa-11ea-8696-81cb96637bcb.png">
 
 ## Le login
 Première fenêtre où il faut choisir un pseudo pour accéder à la conversation.
