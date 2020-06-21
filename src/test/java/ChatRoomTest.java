@@ -112,6 +112,7 @@ class ChatRoomTest {
         Xml xml = new Xml();
         messagesList = xml.readXMLMessages();
         Message mess = new Message("unitTest",6680,"Hello World!", Constants.dateFormat.format(new Date()));
+        
     }
 
     @Test
