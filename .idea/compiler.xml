@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ChatRoom_Maven_Project" />
         <module name="flexchatroom" />
+        <module name="ChatRoom_Maven_Proje" />
         <module name="ChatRoom Maven Project" />
       </profile>
     </annotationProcessing>

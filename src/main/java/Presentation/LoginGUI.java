@@ -56,10 +56,9 @@ public class LoginGUI extends JFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(!userfield.getText().trim().equals("")) {
+                    frame.setVisible(false);
                     frame.dispose();
-                    new GUI(userfield.getText());
-                }
+                    new GUI();
             }
         });
         panel.add(button);
@@ -70,6 +69,8 @@ public class LoginGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //frame.dispose();
+                frame.setVisible(false);
+                frame.dispose();
                 new FormGUI();
             }
         });
