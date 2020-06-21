@@ -160,6 +160,7 @@ public class Server{
      * Obtient la liste des utilisateurs
      *
      * @see User
+     * @return la liste des utilisateurs
      */
     public static List<User> getUsersList(){
         return usersList;
