@@ -32,11 +32,23 @@ import java.util.List;
 public class Xml {
 
     /**
-     * Les quatres parmamètres permmettant de lire un fichier Xml.
+     * Parmamètre permettant de lire un fichier Xml.
      */
     private DocumentBuilderFactory documentFactory;
+ 
+    /**
+     * Parmamètre permettant de lire un fichier Xml.
+     */
     private DocumentBuilder documentBuilder;
+ 
+    /**
+     * Parmamètre permettant de lire un fichier Xml.
+     */
     private TransformerFactory transformerFactory;
+ 
+    /**
+     * Parmamètre permettant de lire un fichier Xml.
+     */
     private Transformer transformer;
     
     /**
@@ -52,6 +64,7 @@ public class Xml {
             pce.printStackTrace();
         }
     }
+ 
     /**
      * Analyse les éléments du fichier Xml.
      * Retourne la liste de noeuds.
