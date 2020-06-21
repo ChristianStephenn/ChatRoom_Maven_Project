@@ -1,4 +1,4 @@
-# Presentation.Controller.ChatRoom Maven Project
+# ChatRoom Maven Project
 ### Groupe : _AYMARD Théo, LAPY Arnaud, MARIASTEPHEN Christian, MOORGHEN Mégane, MOORGHEN Shéréna & THIAO-LAYEL Vincent_
 
 Le but du projet est de créer une application de bureau en **_JAVA_**. Ci-dessous se trouvera un aperçu de l'application que nous avons nommé _Chat Room_.
