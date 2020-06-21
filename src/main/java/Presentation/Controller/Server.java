@@ -1,9 +1,9 @@
 package Presentation.Controller;
 
-import Presentation.Constants;
+import Data.Constants;
 import Presentation.Model.Message;
 import Presentation.Model.User;
-import Presentation.Xml;
+import Presentation.Model.Xml;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -16,7 +16,6 @@ import java.util.List;
 import static java.lang.Thread.sleep;
 
 public class Server{
-    private static ObjectOutputStream output;
     private static ServerSocket ss;
     private static final List<User> usersList = new ArrayList<>();
 
@@ -69,15 +68,12 @@ public class Server{
 
     public static void send(Message message, String ip, int port) throws IOException {
         Socket socket = new Socket(ip, port);
-        output = new ObjectOutputStream(socket.getOutputStream());
+        ObjectOutputStream output = new ObjectOutputStream(socket.getOutputStream());
         output.writeObject(message);
     }
 
     public static void logout(User user) {
         for (int i = 0; i < usersList.size(); i++) {
-            /*for (int j = 0; j < usersList.size(); j++) {
-                System.out.println(usersList.get(j).getName() + i);
-            }*/
             if(usersList.get(i).getName().equals(user.getName())){
                 usersList.remove(i);
                 break;
@@ -112,6 +108,5 @@ public class Server{
         Message message = new Message("Server", 6000, "Clear_Messages", Constants.dateFormat.format(new Date()));
         broadcast(message);
         //XMLCHATROOM.writeXMLMessages(messagesList); sauvegarde XML
-
     }
 }

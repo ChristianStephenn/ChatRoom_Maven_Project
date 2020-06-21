@@ -1,9 +1,9 @@
 package Presentation.Controller;
 
-import Presentation.Constants;
+import Data.Constants;
 import Presentation.Model.Message;
 import Presentation.Model.User;
-import Presentation.Singletons;
+import Data.Singletons;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
@@ -85,7 +85,7 @@ public class ServerThread extends Thread{
             Type MessType = new TypeToken<Message>() {
             }.getType();
 
-            message = Singletons.getGson().fromJson(splitmess[0].toString(),MessType);
+            message = Singletons.getGson().fromJson(splitmess[0],MessType);
 
             usersList = Server.getUsersList();
             if(message.getText().equals("logout")){
@@ -113,7 +113,7 @@ public class ServerThread extends Thread{
     }
     
     /**
-     * Se déconnecte du ChatRoom
+     * Se déconnecte du Presentation.Controller.ChatRoom
      * 
      * @throws IOException relève une exception
      *

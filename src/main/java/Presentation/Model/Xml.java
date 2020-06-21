@@ -1,6 +1,6 @@
-package Presentation;
+package Presentation.Model;
 
-import Presentation.Model.Message;
+import Data.Constants;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
-  * <b>Xml est une classe qui va créer un fichier Xml et sauvegarder tous les messages de la discussion du ChatRoom.</b>
+  * <b>Xml est une classe qui va créer un fichier Xml et sauvegarder tous les messages de la discussion du Presentation.Controller.ChatRoom.</b>
   * <div>
   * Xml contient :
   * <ul>

@@ -1,4 +1,6 @@
-package Presentation;
+package Presentation.View;
+
+import Presentation.View.LoginGUI;
 
 import javax.swing.*;
 import java.awt.*;
@@ -7,7 +9,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
 /**
- *<b> FormGUI est une classe qui permet d'ouvrir une fenetre pour se connecter/s'enregistrer au ChatRoom.</b>
+ *<b> FormGUI est une classe qui permet d'ouvrir une fenetre pour se connecter/s'enregistrer au Presentation.Controller.ChatRoom.</b>
  *<p>FormGUI contient tous les paramètres nécessaires pour afficher la fenetre de connexion (JFrame, JPanel, JButton).</p>
  */
 public class FormGUI {

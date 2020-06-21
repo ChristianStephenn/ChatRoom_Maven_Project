@@ -1,4 +1,4 @@
-package Presentation;
+package Data;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

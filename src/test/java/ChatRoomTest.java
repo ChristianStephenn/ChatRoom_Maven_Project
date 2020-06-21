@@ -1,18 +1,11 @@
-import Presentation.Constants;
+import Data.Constants;
 import Presentation.Controller.Server;
-import Presentation.Controller.ServerThread;
-import Presentation.Controller.SimpleUser;
-import Presentation.GUI;
-import Presentation.LoginGUI;
 import Presentation.Model.Message;
 import Presentation.Model.User;
-import Presentation.Xml;
+import Presentation.Model.Xml;
 import org.junit.jupiter.api.Test;
 
-import javax.print.attribute.standard.Severity;
 import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
 import java.util.Date;
 import java.util.List;
 

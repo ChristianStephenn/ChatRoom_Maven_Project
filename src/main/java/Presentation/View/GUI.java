@@ -1,5 +1,6 @@
-package Presentation;
+package Presentation.View;
 
+import Data.Constants;
 import Presentation.Controller.SimpleUser;
 
 import javax.swing.*;
@@ -18,8 +19,8 @@ public class GUI implements ActionListener{
     private final ImageIcon img_bin_button2 = new ImageIcon(Constants.BIN_BUTTON_DIRECTORY2);
     private final JLabel bin_text = new JLabel(Constants.BIN_MESSAGE);
     
-    private ImageIcon imgp = new ImageIcon(Constants.PAINT_DIRECTORY);
-    private JButton paintButton = new JButton();
+    private final ImageIcon imgp = new ImageIcon(Constants.PAINT_DIRECTORY);
+    private final JButton paintButton = new JButton();
     
     private final ImageIcon img = new ImageIcon(Constants.LOGO_DIRECTORY);
     private final JLabel image_label = new JLabel(img);
@@ -89,9 +90,6 @@ public class GUI implements ActionListener{
         users.setBounds(5,260, 290,340);
         users.setBackground(Constants.mainColor);
         users.add(showUser);
-
-        //JLabel userAvatar = new JLabel(Constants.avatar2);
-        //users.add(userAvatar);
         
         showUser.setFont(Constants.fontUser);
         showUser.setForeground(Constants.userTitleColorColor);
@@ -181,11 +179,6 @@ public class GUI implements ActionListener{
             }
         });
 
-        /*JScrollPane scrollPane = new JScrollPane(jPanel);
-        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);*/
-        //preShowText_panel.add(scrollPane);
-
         frame.add(panel, BorderLayout.CENTER);
         frame.pack();
         frame.setVisible(true);
@@ -207,7 +200,6 @@ public class GUI implements ActionListener{
     }
 
     public static void refreshLogout(String name){
-        System.out.println("sa rentre");
         String[] splitmess = onlineUsersHTML.split("<br>");
         onlineUsersHTML = "<html>";
         for (String username : splitmess) {

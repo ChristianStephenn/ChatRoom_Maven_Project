@@ -1,8 +1,9 @@
-import Presentation.Constants;
-import Presentation.Controller.Server;
+package Presentation.Controller;
+
+import Data.Constants;
 
 /**
-  * <b>ChatRoom est une classe qui permet de lancer le serveur.</b>
+  * <b>Presentation.Controller.ChatRoom est une classe qui permet de lancer le serveur.</b>
   */
 public class ChatRoom {
  

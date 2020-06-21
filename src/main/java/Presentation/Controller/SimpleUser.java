@@ -1,8 +1,8 @@
 package Presentation.Controller;
 
-import Presentation.Constants;
+import Data.Constants;
 import Presentation.Model.Message;
-import Presentation.Singletons;
+import Data.Singletons;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -45,7 +45,7 @@ public class SimpleUser {
     static Message message;
 
     /**
-     * Permet de se connecter au ChatRoom
+     * Permet de se connecter au Presentation.Controller.ChatRoom
      *
      * @param name
      *             Nom de l'utilisateur
@@ -103,7 +103,7 @@ public class SimpleUser {
     }
 
     /**
-     * Se déconnecte du ChatRoom
+     * Se déconnecte du Presentation.Controller.ChatRoom
      *
      * @throws IOException releve une exception
      */

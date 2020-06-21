@@ -1,4 +1,4 @@
-package Presentation;
+package Presentation.View;
 
 import javax.swing.*;
 import java.awt.*;
@@ -6,11 +6,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *<b> LoginGui est une classe qui permet d'ouvrir une fenêtre pour se connecter au ChatRoom.</b>
+ *<b> LoginGui est une classe qui permet d'ouvrir une fenêtre pour se connecter au Presentation.Controller.ChatRoom.</b>
  * <div>
  * LoginGui contient :
  * <ul>
- * <li>Jpanel : fenêtre pour se connecter au ChatRoom.</li>
+ * <li>Jpanel : fenêtre pour se connecter au Presentation.Controller.ChatRoom.</li>
  * </ul>
  * </div>
  */
@@ -86,7 +86,7 @@ public class LoginGUI extends JFrame {
     }
 
     /**
-     * Ouvre une fenêtre pour se connecter au ChatRoom.
+     * Ouvre une fenêtre pour se connecter au Presentation.Controller.ChatRoom.
      * @param args
      *          parametre du main
      */

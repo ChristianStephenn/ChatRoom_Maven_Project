@@ -1,7 +1,7 @@
 package Presentation.Controller;
 
-import Presentation.Constants;
-import Presentation.GUI;
+import Data.Constants;
+import Presentation.View.GUI;
 import Presentation.Model.Message;
 
 import java.io.IOException;
