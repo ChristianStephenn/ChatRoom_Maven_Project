@@ -23,11 +23,11 @@ Première fenêtre où il faut choisir un pseudo pour accéder à la conversatio
 <img src="https://user-images.githubusercontent.com/63911484/85234340-fb7b7200-b40c-11ea-81ba-a7a3be07634d.png">
 
 ### Version finale
-* Espace de connexion & Formulaire d'inscription :
+* Espace de connexion :
 <img src="https://user-images.githubusercontent.com/63911484/85234418-7a70aa80-b40d-11ea-95c7-bda24df0a1b8.png">
-<img src="https://user-images.githubusercontent.com/63911484/85234440-9ecc8700-b40d-11ea-8dca-194c9fdcf625.png">
 
-Se connecter avec un compte existant ou pour ce créer un nouveau compte utilisateur
+* Formulaire d'inscription : Se connecter avec un compte existant ou pour ce créer un nouveau compte utilisateur
+<img src="https://user-images.githubusercontent.com/63911484/85234440-9ecc8700-b40d-11ea-8dca-194c9fdcf625.png">
 
 ## Fenêtre de conversation
 
