@@ -20,44 +20,53 @@ THIAO-LAYEL Vincent : [_chillybrise_](https://github.com/chillybrise/) <img src=
 ## Le login
 Première fenêtre où il faut choisir un pseudo pour accéder à la conversation.
 ### Version provisoire
-<img>
+<img src="https://user-images.githubusercontent.com/63911484/85234340-fb7b7200-b40c-11ea-81ba-a7a3be07634d.png">
 
 ### Version finale
-* Espace de connexion & Formulaire d'inscription :
-<img>
+* Espace de connexion :
+<img src="https://user-images.githubusercontent.com/63911484/85234418-7a70aa80-b40d-11ea-95c7-bda24df0a1b8.png">
 
-Se connecter avec un compte existant ou pour ce créer un nouveau compte utilisateur
+* Formulaire d'inscription : Se connecter avec un compte existant ou pour ce créer un nouveau compte utilisateur
+<img src="https://user-images.githubusercontent.com/63911484/85234440-9ecc8700-b40d-11ea-8dca-194c9fdcf625.png">
 
 ## Fenêtre de conversation
 
-<img>
+<img src="https://user-images.githubusercontent.com/63911484/85234479-f66af280-b40d-11ea-9fb0-c27486a80614.png">
 
 ### Deux zones :
 * _Online users_ : dresse une liste des utilisateurs connectés.
 
-<img>
+<img src="https://user-images.githubusercontent.com/63911484/85234544-53ff3f00-b40e-11ea-9d6c-de41391e912d.png">
 
 * _Chat_ : affichera la conversation entre les utilisateurs.
 
-<img>
+<img src="https://user-images.githubusercontent.com/63911484/85234577-8c9f1880-b40e-11ea-8dae-2d8a7a247c0c.png">
 
 ### Détails :
 * _Zone de saisie_ :
 
-<img>
+<img src="https://user-images.githubusercontent.com/63911484/85234681-544c0a00-b40f-11ea-90d7-9e831da71c29.png">
 
 Bouton entrer, fonctionne en _cliquant_ dessus ou en appyuant sur la touche `Entrer`.
 Barre de saisie de texte, écrire un message.
 
 * _Delete button_ :
 
-<img>
+Bouton désactivé
+<img src="https://user-images.githubusercontent.com/63911484/85233739-ff0cfa00-b408-11ea-8dd7-784542ba0f86.png">
+
+Bouton activé
+<img src="https://user-images.githubusercontent.com/63911484/85233915-4647ba80-b40a-11ea-9781-dc40f0e8783f.png">
 
 Permet de supprimer la conversation.
-<img>
+
+<img src="https://user-images.githubusercontent.com/63911484/85234737-d805f680-b40f-11ea-86db-ce67ee282a96.png">
+
 
 * _Paint Button_ :
 
-<img>
+<img src="https://user-images.githubusercontent.com/63911484/85234785-2adfae00-b410-11ea-8016-fb1e3c8e1753.png"> Permet d'accéder à la zone de dessin. 
 
 Ouvre une nouvelle fenêtre où l'utilisateur pourra dessiner et envoyer son dessin dans la conversation : **_EN COURS_**
+
+<img src="https://user-images.githubusercontent.com/63911484/85234385-50b78380-b40d-11ea-86d2-83882767880a.png">
