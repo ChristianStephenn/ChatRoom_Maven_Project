@@ -15,6 +15,7 @@ public class Constants {
     
     public static String TITLE = "Chat Room";
     public static String LOGO_DIRECTORY = "./image/Logo.PNG";
+    public static String PAINT_DIRECTORY = "./image/paint.PNG";
     public static String BUTTON_DIRECTORY = "./image/coussinet_button.PNG";
     public static String BIN_BUTTON_DIRECTORY = "./image/poubox.PNG";
     public static String BIN_BUTTON_DIRECTORY2 = "./image/poubix.PNG";
