@@ -16,9 +16,13 @@ public class Constants {
     public static String TITLE = "Chat Room";
     public static String LOGO_DIRECTORY = "./image/Logo.PNG";
     public static String BUTTON_DIRECTORY = "./image/coussinet_button.PNG";
+    public static String BIN_BUTTON_DIRECTORY = "./image/poubox.PNG";
+    public static String BIN_BUTTON_DIRECTORY2 = "./image/poubix.PNG";
     public static String USERS = "Online users";
     public static String CHAT = "Chat";
     public static String WRITE = "Write a message";
+    public static String BIN_MESSAGE = "Click me to delete the conversation";
+    public static String BIN_MESSAGE2 = "Conversation deleted !";
 
     public static Color mainColor = new Color(189, 158, 232, 255);
     public static Color barExtColor = new Color(185, 138, 243, 255);
@@ -26,6 +30,7 @@ public class Constants {
     public static Color colorText = new Color(62, 49, 83, 255);
     public static Color userTitleColor = new Color(54, 26, 130, 255);
     public static Color chatTitleColor = new Color(96, 37, 234, 255);
+    public static Color userTitleColorColor = new Color(83, 2, 64, 255);
 
     public static Border lineborder = BorderFactory.createLoweredBevelBorder();
     public static Border RaisedBevelBorder = BorderFactory.createLineBorder(barIntColor);
@@ -36,6 +41,7 @@ public class Constants {
 
     public static Font font = new Font("Comic sans MS", Font.BOLD | Font.ITALIC, 13);
     public static Font font2 = new Font("Comic sans MS",Font.BOLD, 15);
+    public static Font font3 = new Font("Comic sans MS", Font.ITALIC, 10);
     public static Font userTitleFont =  new Font("comic sans ms",Font.BOLD|Font.ITALIC,18);
     public static Font chatTitleFont =  new Font("comic sans ms",Font.BOLD|Font.ITALIC,15);
 
