@@ -9,6 +9,9 @@ public class ChatRoom {
  /**
   * Se connecte au serveur.
   *
+  * @param args
+  *        parametre du main
+  *
   * @see Server
   */
     public static void main(String[] args) {

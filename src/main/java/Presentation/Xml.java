@@ -22,12 +22,12 @@ import java.util.List;
 
 /**
   * <b>Xml est une classe qui va créer un fichier Xml et sauvegarder tous les messages de la discussion du ChatRoom.</b>
-  * <p>
+  * <div>
   * Xml contient :
   * <ul>
   * <li>Quatre paramètres configurables qui permet de lire un fichier Xml en utilisant Xpath en Java.</li>
-  *</ul>
-  * </p>
+  * </ul>
+  * </div>
   */
 public class Xml {
 

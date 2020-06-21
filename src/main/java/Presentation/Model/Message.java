@@ -4,14 +4,15 @@ import java.io.Serializable;
 
 /**
  * <b>Message est une classe qui permet d'obtenir toutes les informations necessaires lorsque le message est envoyé sur Chat Room.</b>
- * <p>
+ * <div>
  * Message contient :
  * <ul>
  * <li>Nom de expediteur</li>
  * <li>Port</li>
  * <li>Texte du message</li>
  * <li>Date</li>
- * </p>
+ * </ul>
+ * </div>
  */
 public class Message implements Serializable {
 
