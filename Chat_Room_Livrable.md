@@ -213,6 +213,8 @@ Cette architecture a été choisie par l'équipe parce qu'elle permet de disting
 
 #### Diagramme UML des composants
 
+<img src = https://github.com/ChristianStephenn/ChatRoom_Maven_Project/blob/master/images/UML_Composant.png width="500" high="800">
+
 #### Design Pattern : Singleton
 Ce patron permet d'assurer que chaque classe n'ait qu'une instance et donc d'avoir un meilleur contrôle lorque l'on souhaite accéder à une classe.
 
