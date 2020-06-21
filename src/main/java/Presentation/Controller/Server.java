@@ -1,5 +1,6 @@
 package Presentation.Controller;
 
+import Presentation.Constants;
 import Presentation.Model.Message;
 import Presentation.Model.User;
 import Presentation.Xml;
@@ -10,6 +11,7 @@ import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static java.lang.Thread.sleep;
@@ -92,6 +94,13 @@ public class Server{
         for (Message message : messagesList) {
             send(message, user.getIp(), user.getPort());
             sleep(100);
+        }
+    }
+
+    public static void sendOnlineUsers(User user) throws IOException {
+        for (User onlineUser : usersList) {
+            Message message = new Message("Server", 6000, "Online_Users_List" + Constants.REGEX + onlineUser.getName(), Constants.dateFormat.format(new Date()));
+            send(message, user.getIp(), user.getPort());
         }
     }
 }

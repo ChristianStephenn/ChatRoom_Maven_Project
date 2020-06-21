@@ -44,8 +44,7 @@ public class Xml {
             Document document= documentBuilder.parse(new File(filePath));
             Element root = document.getDocumentElement();
             elementNodes = root.getChildNodes();
-        }
-        catch (SAXException | IOException e) { e.printStackTrace(); }
+        } catch (SAXException | IOException e) { e.printStackTrace(); }
 
         return elementNodes;
     }
@@ -107,8 +106,7 @@ public class Xml {
         Element root = document.createElement("messages");
         document.appendChild(root);
 
-        for (int i = 0; i < messagesList.size(); i++) {
-            Message currentMessage = messagesList.get(i);
+        for (Message currentMessage : messagesList) {
             message = document.createElement("message");
 
             messageName = document.createElement("name");

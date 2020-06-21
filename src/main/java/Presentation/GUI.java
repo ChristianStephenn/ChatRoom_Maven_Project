@@ -1,43 +1,43 @@
 package Presentation;
 
 import Presentation.Controller.SimpleUser;
+import Presentation.Model.Message;
+import Presentation.Model.User;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
+import java.util.List;
 
 public class GUI implements ActionListener{
 
-    private JPanel users = new JPanel();
-    private JLabel showUser = new JLabel();
+    private final JPanel users = new JPanel();
+    private static final JLabel showUser = new JLabel();
 
-    private ImageIcon img = new ImageIcon(Constants.LOGO_DIRECTORY);
-    private JLabel image_label = new JLabel(img);
+    private final ImageIcon img = new ImageIcon(Constants.LOGO_DIRECTORY);
+    private final JLabel image_label = new JLabel(img);
 
-    private JPanel discussion_panel = new JPanel();
+    private final JPanel discussion_panel = new JPanel();
 
-    private JPanel messageBar_panel = new JPanel();
-    private JButton enterButton = new JButton();
-    private ImageIcon img_button = new ImageIcon(Constants.BUTTON_DIRECTORY);
-    private JTextField write_text_field = new JTextField(Constants.WRITE);
+    private final JPanel messageBar_panel = new JPanel();
+    private final JButton enterButton = new JButton();
+    private final ImageIcon img_button = new ImageIcon(Constants.BUTTON_DIRECTORY);
+    private final JTextField write_text_field = new JTextField(Constants.WRITE);
 
-    private static JLabel showText_label = new JLabel();
-    private JPanel preShowText_panel = new JPanel();
+    private static final JLabel showText_label = new JLabel();
+    private final JPanel preShowText_panel = new JPanel();
 
-    private SimpleUser simpleUser;
+    private final SimpleUser simpleUser;
 
     private static String messagesHTML = "<html>";
+    private static String onlineUsersHTML = "<html>";
 
     public GUI() {
         String name = JOptionPane.showInputDialog("Enter name");
-
         initGUI();
         simpleUser = new SimpleUser();
-        /*Scanner scan = new Scanner(System.in);
-        System.out.print("Enter name: ");
-        String name = scan.nextLine();*/
         simpleUser.connect(name);
     }
 
@@ -81,7 +81,9 @@ public class GUI implements ActionListener{
         users.setBounds(5,260, 290,380);
         users.setBackground(Constants.mainColor);
         users.add(showUser);
-        showUser.setText(write_text_field.getText());
+
+        showUser.setFont(Constants.font2);
+        showUser.setForeground(Constants.colorText);
 
         discussion_panel.setBorder(BorderFactory.createTitledBorder(Constants.raisedBevelBorder,Constants.CHAT, TitledBorder.LEFT, TitledBorder.TOP, Constants.chatTitleFont, Constants.chatTitleColor));
         discussion_panel.setBackground(Constants.mainColor);
@@ -115,6 +117,7 @@ public class GUI implements ActionListener{
             try {
                 SimpleUser.send(SimpleUser.getName() + " : " + write_text_field.getText());
                 write_text_field.setText("");
+                showUser.setText("looo");
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -153,6 +156,11 @@ public class GUI implements ActionListener{
     public static void printGui(String message){
         messagesHTML += message + "<br>";
         showText_label.setText(messagesHTML + "</html>");
+    }
+
+    public static void refreshOnlineUsers(String name) {
+        onlineUsersHTML += name + "<br>";
+        showUser.setText(onlineUsersHTML + "</html>");
     }
 
     public static void main(String[] args) {
