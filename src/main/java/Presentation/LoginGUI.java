@@ -6,9 +6,25 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 
+/**
+ *<b> LoginGui est une classe qui permet d'ouvrir une fenêtre pour se connecter au ChatRoom.</b>
+ *<p>
+ * LoginGui contient :
+ *<ul>
+ *<li>Jpanel : fenêtre pour se connecter au ChatRoom.</li>
+ *</ul>
+ *</p>
+ */
 public class LoginGUI extends JFrame {
+    /**
+     * Fenêtre de connexion.
+     */
     private JPanel loginPanel=new JPanel();
-
+    
+    /**
+     * Constructeur LoginGUI.
+     * Saisie du login par l'utilisateur.
+     */
     public LoginGUI() {
         JPanel panel = new JPanel();
         JFrame frame = new JFrame("Chat Room");
@@ -73,6 +89,9 @@ public class LoginGUI extends JFrame {
         frame.setVisible(true);
     }
 
+    /**
+     * Ouvre une fenêtre pour se connecter au ChatRoom.
+     */
     public static void main(String[] args) {
         LoginGUI window = new LoginGUI();
     }
