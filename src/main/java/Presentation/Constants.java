@@ -30,6 +30,7 @@ public class Constants {
     public static Color colorText = new Color(62, 49, 83, 255);
     public static Color userTitleColor = new Color(54, 26, 130, 255);
     public static Color chatTitleColor = new Color(96, 37, 234, 255);
+    public static Color userTitleColorColor = new Color(83, 2, 64, 255);
 
     public static Border lineborder = BorderFactory.createLoweredBevelBorder();
     public static Border RaisedBevelBorder = BorderFactory.createLineBorder(barIntColor);
