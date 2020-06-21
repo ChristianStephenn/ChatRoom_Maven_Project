@@ -1,4 +1,4 @@
-# Presentation.Controller.ChatRoom Maven Project
+# ChatRoom Maven Project
 ### Groupe : _AYMARD Théo, LAPY Arnaud, MARIASTEPHEN Christian, MOORGHEN Mégane, MOORGHEN Shéréna & THIAO-LAYEL Vincent_
 
 Le but du projet est de créer une application de bureau en **_JAVA_**. Ci-dessous se trouvera un aperçu de l'application que nous avons nommé _Chat Room_.
@@ -22,12 +22,12 @@ Première fenêtre où il faut choisir un pseudo pour accéder à la conversatio
 ### Version provisoire
 <img src="https://user-images.githubusercontent.com/63911484/85234340-fb7b7200-b40c-11ea-81ba-a7a3be07634d.png">
 
-### Version finale
-* Espace de connexion :
-<img src="https://user-images.githubusercontent.com/63911484/85234418-7a70aa80-b40d-11ea-95c7-bda24df0a1b8.png">
-
-* Formulaire d'inscription : Se connecter avec un compte existant ou pour ce créer un nouveau compte utilisateur
+### Version finale (en cours)
+* Espace de connexion : Se connecter avec un compte existant
 <img src="https://user-images.githubusercontent.com/63911484/85234440-9ecc8700-b40d-11ea-8dca-194c9fdcf625.png">
+
+* Formulaire d'inscription : Créer un nouveau compte utilisateur
+<img src="https://user-images.githubusercontent.com/63911484/85234418-7a70aa80-b40d-11ea-95c7-bda24df0a1b8.png">
 
 ## Fenêtre de conversation
 
