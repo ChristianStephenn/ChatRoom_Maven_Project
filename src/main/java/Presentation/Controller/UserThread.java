@@ -37,8 +37,9 @@ public class UserThread extends Thread{
                 GUI.printGui(message.getText());
             }
             if(message.getText().contains("is connected")){
-                //Server.sendOnlineUsers(user);
                 GUI.refreshOnlineUsers(message.getSenderName());
+            }else if (message.getText().contains("is disconnected")){
+                GUI.refreshLogout(message.getSenderName());
             }
 
         } catch (IOException | ClassNotFoundException ex) {
@@ -54,8 +55,4 @@ public class UserThread extends Thread{
         }
     }
 
-    /*public void send(String str) throws IOException {
-        message = new Message(name, port, str, Constants.dateFormat.format(new Date()));
-        output.writeObject(message);
-    }*/
 }

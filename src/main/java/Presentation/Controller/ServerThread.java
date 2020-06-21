@@ -66,7 +66,7 @@ public class ServerThread extends Thread{
     public void userLogout() throws IOException {
         User user = new User(message.getSenderName(),Constants.HOSTIP, message.getPort());
         Server.logout(user);
-        Message logoutMessage = new Message("Server", 6000, message.getSenderName() + " is disconnected", Constants.dateFormat.format(new Date()));
+        Message logoutMessage = new Message(message.getSenderName(), 6000, message.getSenderName() + " is disconnected", Constants.dateFormat.format(new Date()));
         Server.broadcast(logoutMessage);
     }
 
@@ -83,10 +83,6 @@ public class ServerThread extends Thread{
                 Server.sendOnlineUsers(user);
             }
         }
-
-        /*if(message.getText().contains("is connected")){
-            Server.sendOnlineUsers(user);
-        }*/
     }
 
     public boolean userExist(String name, int port){

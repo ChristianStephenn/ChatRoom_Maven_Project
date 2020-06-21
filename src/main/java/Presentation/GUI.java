@@ -191,6 +191,22 @@ public class GUI implements ActionListener{
         showUser.setText(onlineUsersHTML + "</html>");
     }
 
+    public static void refreshLogout(String name){
+        System.out.println("sa rentre");
+        String[] splitmess = onlineUsersHTML.split("<br>");
+        onlineUsersHTML = "<html>";
+        for (String username : splitmess) {
+            if(!username.contains(name)){
+                if(username.contains("<html>")){
+                    onlineUsersHTML += username.substring(6) + "<br>";
+                }else {
+                    onlineUsersHTML += username + "<br>";
+                }
+            }
+        }
+        showUser.setText(onlineUsersHTML + "</html>");
+    }
+
     public static void main(String[] args) {
         new GUI();
     }
