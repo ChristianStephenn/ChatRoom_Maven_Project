@@ -89,6 +89,7 @@ public class GUI implements ActionListener{
         users.setBackground(Constants.mainColor);
         users.add(showUser);
         showUser.setText(write_text_field.getText());
+        showUser.setForeground(Constants.userTitleColorColor);
         
         bin_text.setBounds(60,602,200,30);
         bin_text.setFont(Constants.font3);
