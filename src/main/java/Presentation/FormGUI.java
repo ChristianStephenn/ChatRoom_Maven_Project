@@ -7,10 +7,20 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowEvent;
 
+/**
+ *<b> FormGUI est une classe qui permet d'ouvrir une fenetre pour se connecter/s'enregistrer au ChatRoom.</b>
+ *<p>FormGUI contient tous les paramètres nécessaires pour afficher la fenetre de connexion (JFrame, JPanel, JButton).</p>
+ */
 public class FormGUI {
-
+    
+    /**
+     * Choix de l'avatar.
+     */
     private static int avatarchoice=1;
 
+    /**
+     * Contructeur FormGUI.
+     */
     public FormGUI(){
         JPanel panel = new JPanel();
         JFrame frame = new JFrame("Chat Room");
