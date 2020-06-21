@@ -14,11 +14,14 @@ public class SimpleUser {
     private static ObjectOutputStream output;
     private static String name;
     private static int port;
-    private static ServerSocket ss;
     static Message message;
 
     public void connect(String name) {
-        this.name = name;
+        if(name.trim().equals("")){
+            this.name = "Anonyme User";
+        }else{
+            this.name = name;
+        }
         int min = 6500;
         int max = 7000;
         int range = max-min;
@@ -27,7 +30,7 @@ public class SimpleUser {
             port = (int)(Math.random() * range) + min;
 
             send(name + " is connected");
-            ss = new ServerSocket(port);
+            ServerSocket ss = new ServerSocket(port);
             while(true){
                 Socket serverSocket = ss.accept();
                 new UserThread(serverSocket).start();
