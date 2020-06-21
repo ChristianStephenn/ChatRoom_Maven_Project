@@ -62,7 +62,7 @@ public class Server{
     public static void saveMessage(Message message){
         if (!message.getText().contains("is connected") && !message.getText().contains("is disconnected")){
             messagesList.add(message);
-            //XMLCHATROOM.writeXMLMessages(messagesList); sauvegarde XML
+            XMLCHATROOM.writeXMLMessages(messagesList);
         }
     }
 
@@ -107,6 +107,6 @@ public class Server{
         messagesList.clear();
         Message message = new Message("Server", 6000, "Clear_Messages", Constants.dateFormat.format(new Date()));
         broadcast(message);
-        //XMLCHATROOM.writeXMLMessages(messagesList); sauvegarde XML
+        XMLCHATROOM.writeXMLMessages(messagesList);
     }
 }
