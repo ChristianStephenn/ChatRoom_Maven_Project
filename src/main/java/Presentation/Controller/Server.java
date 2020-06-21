@@ -106,4 +106,12 @@ public class Server{
             send(message, user.getIp(), user.getPort());
         }
     }
+
+    public static void deleteMessages() throws IOException {
+        messagesList.clear();
+        Message message = new Message("Server", 6000, "Clear_Messages", Constants.dateFormat.format(new Date()));
+        broadcast(message);
+        //XMLCHATROOM.writeXMLMessages(messagesList); sauvegarde XML
+
+    }
 }
