@@ -39,6 +39,15 @@ class ChatRoomTest {
             System.out.println("error");
         }
         //assertEquals(2,Server.getMessagesList().size());
+
+        try {
+            Server.deleteMessages();
+        }
+        catch (Exception e) {
+            System.out.println("error2");
+        }
+        assertEquals(0,Server.getMessagesList().size());
+
     }
 
 

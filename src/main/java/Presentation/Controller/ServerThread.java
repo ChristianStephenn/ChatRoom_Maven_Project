@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * <b>ServerThread est la classe qui permet d'envoyer les sockets reçue par le Serveur</b>
  * <div>
- * UserThread contient :
+ * ServerThread contient :
  * <ul>
  * <li>Un Socket pour la communication</li>
  * <li>Un ObjectInputStream pour serialiser un objet (lecture)</li>
