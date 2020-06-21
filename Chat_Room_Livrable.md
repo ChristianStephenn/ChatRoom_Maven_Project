@@ -205,6 +205,8 @@ Cette architecture a été choisie par l'équipe parce qu'elle permet de disting
 
 #### Diagramme UML de package
 
+<img src = https://user-images.githubusercontent.com/63917571/85235155-0e914080-b413-11ea-9381-86bd7426c73e.png>
+
 #### Diagramme UML de déploiement
 
 #### Diagramme UML des composants

@@ -1,5 +1,17 @@
 # Rapport de test 
 
+Plan de Test :
+  -	ServerUserTest
+  -	ServerThreadTest
+  -	SimpleUserTest
+  -	UserThreadTest
+  -	MessageTest
+  -	UserTest
+  -	ChatRoomTest
+  -	GUI
+  -	LoginGUI
+  
+
 
 Tout d’abord, nous avons effectué des tests sur la classe Server, pour cela nous avons utilisé la fonction assertEquals avec les méthodes addUser, logout, saveMessage.
 
