@@ -10,7 +10,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 /**
- * <b>UserThread est la classe qui permet d'envoyer les sockets reçue par le serveur</b>
+ * <b>UserThread est la classe qui permet d'envoyer les sockets reçue par le User</b>
  * <div>
  * UserThread contient :
  * <ul>
@@ -60,6 +60,7 @@ public class UserThread extends Thread{
      * 
      * @see Message
      * @see GUI
+     * @see Constants
      */
     public void run() {
         try {
