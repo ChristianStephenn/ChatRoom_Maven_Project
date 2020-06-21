@@ -61,6 +61,7 @@ class ChatRoomTest {
         assertEquals("localhost",user.getIp());
         assertEquals(6670,user.getPort());
     }
+
     @Test
     void readXmlTest(){
         List<Message> messagesList;
