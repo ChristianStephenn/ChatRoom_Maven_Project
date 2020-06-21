@@ -1,4 +1,4 @@
-# ChatRoom Maven Project
+# <img src="https://user-images.githubusercontent.com/63911484/85235445-31bcef80-b415-11ea-84f0-322b3ecc4fcf.png" width="80" height="80">ChatRoom Maven Project
 ### Groupe : _AYMARD Théo, LAPY Arnaud, MARIASTEPHEN Christian, MOORGHEN Mégane, MOORGHEN Shéréna & THIAO-LAYEL Vincent_
 
 Le but du projet est de créer une application de bureau en **_JAVA_**. Ci-dessous se trouvera un aperçu de l'application que nous avons nommé _Chat Room_.
