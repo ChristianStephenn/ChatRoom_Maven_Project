@@ -18,9 +18,6 @@ public class GUI implements ActionListener{
     private final ImageIcon img_bin_button2 = new ImageIcon(Constants.BIN_BUTTON_DIRECTORY2);
     private final JLabel bin_text = new JLabel(Constants.BIN_MESSAGE);
     
-    private ImageIcon img = new ImageIcon(Constants.LOGO_DIRECTORY);
-    private JLabel image_label = new JLabel(img);
-
     private final ImageIcon img = new ImageIcon(Constants.LOGO_DIRECTORY);
     private final JLabel image_label = new JLabel(img);
 
@@ -89,10 +86,10 @@ public class GUI implements ActionListener{
         users.setBackground(Constants.mainColor);
         users.add(showUser);
 
-        JLabel userAvatar = new JLabel(Constants.avatar2);
-        users.add(userAvatar);
+        //JLabel userAvatar = new JLabel(Constants.avatar2);
+        //users.add(userAvatar);
         
-        showUser.setFont(Constants.font2);
+        showUser.setFont(Constants.fontUser);
         showUser.setForeground(Constants.userTitleColorColor);
         
         bin_text.setBounds(60,602,200,30);
