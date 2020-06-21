@@ -201,7 +201,7 @@ Cette architecture a été choisie par l'équipe parce qu'elle permet de disting
 
 #### Diagramme UML des classes
 
-<img src = https://github.com/ChristianStephenn/ChatRoom_Maven_Project/blob/master/images/UML%20de%20Classe.PNG>
+<img src = https://github.com/ChristianStephenn/ChatRoom_Maven_Project/blob/master/images/UML_Class.PNG width="800" high="1200">
 
 #### Diagramme UML de package
 
