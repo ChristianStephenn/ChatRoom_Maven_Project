@@ -140,7 +140,7 @@ public class Xml {
     /**
      * Ecrit les messages sur le fichier Xml.
      * 
-     * @param messageList
+     * @param messagesList
      *              La liste des messages.
      * @see Message
      */

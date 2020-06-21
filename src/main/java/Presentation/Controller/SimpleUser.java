@@ -5,7 +5,6 @@ import Presentation.Model.Message;
 import Presentation.Singletons;
 
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -13,8 +12,6 @@ import java.util.Date;
 
 public class SimpleUser {
     private static ObjectOutputStream output;
-    private ObjectInputStream input;
-    private Socket socket;
     private static String name;
     private static int port;
     private static ServerSocket ss;
@@ -39,9 +36,7 @@ public class SimpleUser {
             uhe.printStackTrace();
         } finally {
             try {
-                input.close();
                 output.close();
-                socket.close();
             } catch (IOException ioe) {
                 ioe.printStackTrace();
             }

@@ -1,25 +1,22 @@
 package Presentation;
 
 import Presentation.Controller.SimpleUser;
-import Presentation.Model.Message;
-import Presentation.Model.User;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
-import java.util.List;
 
 public class GUI implements ActionListener{
 
     private final JPanel users = new JPanel();
     private static final JLabel showUser = new JLabel();
     
-    private JButton deleteButton = new JButton();
-    private ImageIcon img_bin_button = new ImageIcon(Constants.BIN_BUTTON_DIRECTORY);
-    private ImageIcon img_bin_button2 = new ImageIcon(Constants.BIN_BUTTON_DIRECTORY2);
-    private JLabel bin_text = new JLabel(Constants.BIN_MESSAGE);
+    private final JButton deleteButton = new JButton();
+    private final ImageIcon img_bin_button = new ImageIcon(Constants.BIN_BUTTON_DIRECTORY);
+    private final ImageIcon img_bin_button2 = new ImageIcon(Constants.BIN_BUTTON_DIRECTORY2);
+    private final JLabel bin_text = new JLabel(Constants.BIN_MESSAGE);
 
     private final ImageIcon img = new ImageIcon(Constants.LOGO_DIRECTORY);
     private final JLabel image_label = new JLabel(img);

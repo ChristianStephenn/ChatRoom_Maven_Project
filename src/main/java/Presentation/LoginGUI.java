@@ -15,10 +15,6 @@ import java.awt.event.ActionListener;
  *</p>
  */
 public class LoginGUI extends JFrame {
-    /**
-     * Fenêtre de connexion.
-     */
-    private final JPanel loginPanel=new JPanel();
     
     /**
      * Constructeur LoginGUI.

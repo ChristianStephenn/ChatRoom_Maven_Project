@@ -3,19 +3,16 @@ package Presentation.Controller;
 import Presentation.Constants;
 import Presentation.GUI;
 import Presentation.Model.Message;
-import Presentation.Model.User;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.List;
 
 public class UserThread extends Thread{
     private final Socket socket;
     private ObjectInputStream input;
     private ObjectOutputStream output;
-    private String name;
     private Message message;
 
     public UserThread(Socket socket) {

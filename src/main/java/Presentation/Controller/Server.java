@@ -6,7 +6,6 @@ import Presentation.Model.User;
 import Presentation.Xml;
 
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -17,10 +16,9 @@ import java.util.List;
 import static java.lang.Thread.sleep;
 
 public class Server{
-    private static ObjectInputStream input;
     private static ObjectOutputStream output;
     private static ServerSocket ss;
-    private static List<User> usersList = new ArrayList<>();
+    private static final List<User> usersList = new ArrayList<>();
     private static List<Message> messagesList = new ArrayList<>();
     private static final Xml XMLCHATROOM = new Xml();
 
