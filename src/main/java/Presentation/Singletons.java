@@ -5,12 +5,12 @@ import com.google.gson.GsonBuilder;
 
 /**
   * <b>Singletons est une classe qui permet de respecter le design pattern singleton.</b>
-  * <p>
+  * <div>
   * Singletons contient :
   * <ul>
   * <li>Instance gson</li>
-  *</ul>
-  * </p>
+  * </ul>
+  * </div>
   */
 
 public class Singletons {
