@@ -46,7 +46,7 @@ public class GUI implements ActionListener{
 /**
 * Constructeur GUI
 *
-* @see SimpleUSer
+* @see SimpleUser
 */
     public GUI() {
         String name = JOptionPane.showInputDialog("Enter name");
@@ -236,6 +236,9 @@ public class GUI implements ActionListener{
 
     /**
     * Rafraichit la zone des utilisateurs en ligne lorsqu'il y a une déconnexion
+     *
+     * @param name
+     *          nom 
     */
     public static void refreshLogout(String name){
         String[] splitmess = onlineUsersHTML.split("<br>");

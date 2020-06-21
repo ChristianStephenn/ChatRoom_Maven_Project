@@ -206,8 +206,6 @@ public class Server{
         }
     }
 
-
-
     /**
      * affiche les information d'un utilisateurs
      *
