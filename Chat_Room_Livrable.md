@@ -209,6 +209,8 @@ Cette architecture a été choisie par l'équipe parce qu'elle permet de disting
 
 #### Diagramme UML de déploiement
 
+<img src = https://user-images.githubusercontent.com/63917571/85235702-83667980-b417-11ea-82a0-259e2a953c5c.png>
+
 #### Diagramme UML des composants
 
 #### Design Pattern : Singleton
