@@ -84,6 +84,8 @@ public class Server{
         return usersList;
     }
 
+    public static List<Message> getMessagesList() { return messagesList; }
+
     public static void addUser(User user ){
         usersList.add(user);
     }
