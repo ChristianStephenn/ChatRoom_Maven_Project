@@ -11,6 +11,7 @@ import java.io.IOException;
 public class GUI implements ActionListener{
 
     private JPanel users = new JPanel();
+    private JLabel showUser = new JLabel();
 
     private ImageIcon img = new ImageIcon(Constants.LOGO_DIRECTORY);
     private JLabel image_label = new JLabel(img);
@@ -79,6 +80,8 @@ public class GUI implements ActionListener{
         users.setLayout(new FlowLayout(FlowLayout.LEFT));
         users.setBounds(5,260, 290,380);
         users.setBackground(Constants.mainColor);
+        users.add(showUser);
+        showUser.setText(write_text_field.getText());
 
         discussion_panel.setBorder(BorderFactory.createTitledBorder(Constants.raisedBevelBorder,Constants.CHAT, TitledBorder.LEFT, TitledBorder.TOP, Constants.chatTitleFont, Constants.chatTitleColor));
         discussion_panel.setBackground(Constants.mainColor);
