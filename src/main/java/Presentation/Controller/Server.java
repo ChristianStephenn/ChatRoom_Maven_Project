@@ -158,6 +158,8 @@ public class Server{
 
     /**
      * renvoie la liste d'utilisateur
+     *
+     * @return usersList
      */
     public static List<User> getUsersList(){
         return usersList;
@@ -166,6 +168,8 @@ public class Server{
 
     /**
      * renvoie la liste des messages
+     *
+     * @return messagesList
      */
     public static List<Message> getMessagesList() {
         return messagesList;
@@ -186,13 +190,15 @@ public class Server{
     /**
      * affiche tous les anciens messages
      *
-     * @throws IOException,InterruptedException relève une exception
+     * @throws InterruptedException
+     *              interruption
+     * @throws IOException
+     *              interruption
      * @param user
      *              utilisateur dont on veut afficher les messages
      *
      * @see Message
      */
-
     public static void printOldMessages(User user) throws IOException, InterruptedException {
         for (Message message : messagesList) {
             send(message, user.getIp(), user.getPort());
